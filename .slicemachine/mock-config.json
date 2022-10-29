@@ -15,6 +15,71 @@
           "blocks": 1
         }
       }
+    },
+    "mainmenu": {}
+  },
+  "slices": {
+    "MainMenuItem": {
+      "default": {
+        "primary": {}
+      },
+      "mainMenuItemWithDropdown": {
+        "primary": {}
+      }
+    },
+    "Hero": {
+      "default": {
+        "primary": {
+          "headingtext": {
+            "content": "Congratulations Goes Out To"
+          },
+          "headingcolortext": {
+            "content": "Our Swimmers"
+          },
+          "image": {
+            "content": "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f"
+          },
+          "imageposition": {
+            "content": false
+          }
+        },
+        "items": {
+          "buttontext": {
+            "content": "Button Text"
+          }
+        }
+      }
+    },
+    "Spotlight": {
+      "default": {
+        "primary": {
+          "heading": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "firstcontentsection": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "secondcontentsection": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 2
+            }
+          },
+          "image": {
+            "content": "https://images.unsplash.com/photo-1487491506942-373c8f7a7ad5"
+          },
+          "imagelocation": {
+            "content": true
+          }
+        },
+        "items": {}
+      }
     }
   }
 }

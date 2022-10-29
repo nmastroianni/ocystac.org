@@ -1,0 +1,34 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "linktext": "eye",
+      "linktarget": {
+        "link_type": "Web",
+        "url": "https://slicemachine.dev"
+      }
+    },
+    "slice_type": "main_menu_item"
+  },
+  {
+    "variation": "mainMenuItemWithDropdown",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "linktext": "empty",
+        "linktarget": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ],
+    "primary": {
+      "buttontext": "foot"
+    },
+    "slice_type": "main_menu_item"
+  }
+]

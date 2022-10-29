@@ -14,9 +14,10 @@
     "title": [
       {
         "type": "heading1",
-        "text": "Accept",
+        "text": "Lesson",
         "spans": []
       }
-    ]
+    ],
+    "slices": []
   }
 }

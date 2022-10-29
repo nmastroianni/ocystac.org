@@ -7,9 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        abril: "'Abril Fatface', serif",
-      },
+      fontFamily: {},
     },
   },
   daisyui: {
@@ -37,5 +35,9 @@ module.exports = {
       },
     ],
   },
-  plugins: [require('daisyui'), require('@tailwindcss/typography')],
+  plugins: [
+    require('daisyui'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'),
+  ],
 }

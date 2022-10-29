@@ -1,5 +1,435 @@
 {
   "slices": {
-    "components": {}
+    "components": {
+      "hero": {
+        "library": "slices",
+        "id": "hero",
+        "name": "Hero",
+        "description": "Hero",
+        "model": {
+          "id": "hero",
+          "type": "SharedSlice",
+          "name": "Hero",
+          "description": "Hero",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Hero",
+              "primary": {
+                "headingtext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "HeadingText",
+                    "placeholder": ""
+                  }
+                },
+                "headingcolortext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "HeadingColorText",
+                    "placeholder": ""
+                  }
+                },
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "imagetooltip": {
+                  "type": "Text",
+                  "config": {
+                    "label": "ImageToolTip",
+                    "placeholder": ""
+                  }
+                },
+                "imageposition": {
+                  "type": "Boolean",
+                  "config": {
+                    "label": "ImagePosition",
+                    "placeholder_false": "Left",
+                    "placeholder_true": "Right",
+                    "default_value": false
+                  }
+                }
+              },
+              "items": {
+                "buttontext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "ButtonText",
+                    "placeholder": ""
+                  }
+                },
+                "buttonlink": {
+                  "type": "Link",
+                  "config": {
+                    "label": "ButtonLink",
+                    "placeholder": "",
+                    "allowTargetBlank": false,
+                    "select": null
+                  }
+                },
+                "buttontype": {
+                  "type": "Select",
+                  "config": {
+                    "label": "ButtonType",
+                    "placeholder": "",
+                    "options": [
+                      "Primary",
+                      "Secondary",
+                      "Accent",
+                      "Ghost"
+                    ]
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "buttontext": "Button Text",
+                "buttonlink": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                },
+                "buttontype": "Primary"
+              }
+            ],
+            "primary": {
+              "headingtext": "Congratulations Goes Out To",
+              "headingcolortext": "Our Swimmers",
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f"
+              },
+              "imagetooltip": "wait",
+              "imageposition": false
+            },
+            "slice_type": "hero"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/Hero/default/preview.png",
+            "width": 1049,
+            "height": 729
+          }
+        }
+      },
+      "main_menu_item": {
+        "library": "slices",
+        "id": "main_menu_item",
+        "name": "MainMenuItem",
+        "description": "MainMenuItem",
+        "model": {
+          "id": "main_menu_item",
+          "type": "SharedSlice",
+          "name": "MainMenuItem",
+          "description": "MainMenuItem",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "MainMenuItem",
+              "primary": {
+                "linktext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "LinkText",
+                    "placeholder": ""
+                  }
+                },
+                "linktarget": {
+                  "type": "Link",
+                  "config": {
+                    "label": "LinkTarget",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            },
+            {
+              "id": "mainMenuItemWithDropdown",
+              "name": "MainMenuItem - With Dropdown",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "MainMenuItem",
+              "primary": {
+                "buttontext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "ButtonText",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "linktext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "LinkText",
+                    "placeholder": ""
+                  }
+                },
+                "linktarget": {
+                  "type": "Link",
+                  "config": {
+                    "label": "LinkTarget",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "linktext": "eye",
+              "linktarget": {
+                "link_type": "Web",
+                "url": "https://slicemachine.dev"
+              }
+            },
+            "slice_type": "main_menu_item"
+          },
+          "mainMenuItemWithDropdown": {
+            "variation": "mainMenuItemWithDropdown",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "linktext": "empty",
+                "linktarget": {
+                  "link_type": "Web",
+                  "url": "http://twitter.com"
+                }
+              }
+            ],
+            "primary": {
+              "buttontext": "foot"
+            },
+            "slice_type": "main_menu_item"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/MainMenuItem/default/preview.png",
+            "width": 296,
+            "height": 296
+          },
+          "mainMenuItemWithDropdown": {
+            "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/MainMenuItem/mainMenuItemWithDropdown/preview.png",
+            "width": 375,
+            "height": 356
+          }
+        }
+      },
+      "spotlight": {
+        "library": "slices",
+        "id": "spotlight",
+        "name": "Spotlight",
+        "description": "Spotlight",
+        "model": {
+          "id": "spotlight",
+          "type": "SharedSlice",
+          "name": "Spotlight",
+          "description": "Spotlight",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Spotlight",
+              "primary": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "imagetooltip": {
+                  "type": "Text",
+                  "config": {
+                    "label": "ImageToolTip",
+                    "placeholder": ""
+                  }
+                },
+                "imagelocation": {
+                  "type": "Boolean",
+                  "config": {
+                    "label": "ImageLocation",
+                    "placeholder_false": "Left",
+                    "placeholder_true": "Right",
+                    "default_value": false
+                  }
+                },
+                "heading": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Heading",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "heading2"
+                  }
+                },
+                "firstcontentsection": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "FirstContentSection",
+                    "placeholder": "Enter content about the spotlight",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "secondcontentsection": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "SecondContentSection",
+                    "placeholder": "Enter more description here",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {
+                "itemtext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Item Text",
+                    "placeholder": ""
+                  }
+                },
+                "icon": {
+                  "type": "Select",
+                  "config": {
+                    "label": "Icon",
+                    "placeholder": "",
+                    "options": [
+                      "Award",
+                      "Check",
+                      "Medal",
+                      "Star",
+                      "Swimmer"
+                    ]
+                  }
+                },
+                "itemtooltip": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Item Tooltip",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "itemtext": "business",
+                "icon": "Medal",
+                "itemtooltip": "sets"
+              }
+            ],
+            "primary": {
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1487491506942-373c8f7a7ad5"
+              },
+              "imagetooltip": "exclaimed",
+              "imagelocation": true,
+              "heading": [
+                {
+                  "type": "heading2",
+                  "text": "Specific",
+                  "spans": []
+                }
+              ],
+              "firstcontentsection": [
+                {
+                  "type": "paragraph",
+                  "text": "Ad pariatur nostrud dolore ea voluptate Lorem velit eiusmod labore non qui. Ex dolor nostrud quis sunt reprehenderit cupidatat nulla dolore occaecat. Adipisicing tempor ea amet elit dolor aliquip nisi consequat.",
+                  "spans": []
+                }
+              ],
+              "secondcontentsection": [
+                {
+                  "type": "paragraph",
+                  "text": "In velit labore aliquip incididunt excepteur culpa culpa ad nulla sunt minim aute aute incididunt. Id qui anim consectetur ut Lorem. Ullamco cillum laborum dolore cillum sint sunt irure dolor id officia pariatur velit magna veniam adipisicing.",
+                  "spans": []
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Culpa quis fugiat tempor excepteur adipisicing consequat ad cillum est deserunt Lorem culpa do aliquip. Fugiat in adipisicing dolore reprehenderit proident minim ad voluptate cillum officia pariatur.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "spotlight"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/Spotlight/default/preview.png",
+            "width": 1242,
+            "height": 863
+          }
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,68 @@
+{
+  "id": "main_menu_item",
+  "type": "SharedSlice",
+  "name": "MainMenuItem",
+  "description": "MainMenuItem",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "MainMenuItem",
+      "primary": {
+        "linktext": {
+          "type": "Text",
+          "config": {
+            "label": "LinkText",
+            "placeholder": ""
+          }
+        },
+        "linktarget": {
+          "type": "Link",
+          "config": {
+            "label": "LinkTarget",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    },
+    {
+      "id": "mainMenuItemWithDropdown",
+      "name": "MainMenuItem - With Dropdown",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "MainMenuItem",
+      "primary": {
+        "buttontext": {
+          "type": "Text",
+          "config": {
+            "label": "ButtonText",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "linktext": {
+          "type": "Text",
+          "config": {
+            "label": "LinkText",
+            "placeholder": ""
+          }
+        },
+        "linktarget": {
+          "type": "Link",
+          "config": {
+            "label": "LinkTarget",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
