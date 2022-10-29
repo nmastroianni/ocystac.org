@@ -362,6 +362,279 @@
                 }
               },
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            },
+            {
+              "id": "primary",
+              "name": "Primary",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Spotlight",
+              "primary": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "imagetooltip": {
+                  "type": "Text",
+                  "config": {
+                    "label": "ImageToolTip",
+                    "placeholder": ""
+                  }
+                },
+                "imagelocation": {
+                  "type": "Boolean",
+                  "config": {
+                    "label": "ImageLocation",
+                    "placeholder_false": "Left",
+                    "placeholder_true": "Right",
+                    "default_value": false
+                  }
+                },
+                "heading": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Heading",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "heading2"
+                  }
+                },
+                "firstcontentsection": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "FirstContentSection",
+                    "placeholder": "Enter content about the spotlight",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "secondcontentsection": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "SecondContentSection",
+                    "placeholder": "Enter more description here",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {
+                "itemtext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Item Text",
+                    "placeholder": ""
+                  }
+                },
+                "icon": {
+                  "type": "Select",
+                  "config": {
+                    "label": "Icon",
+                    "placeholder": "",
+                    "options": [
+                      "Award",
+                      "Check",
+                      "Medal",
+                      "Star",
+                      "Swimmer"
+                    ]
+                  }
+                },
+                "itemtooltip": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Item Tooltip",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            },
+            {
+              "id": "secondary",
+              "name": "Secondary",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Spotlight",
+              "primary": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "imagetooltip": {
+                  "type": "Text",
+                  "config": {
+                    "label": "ImageToolTip",
+                    "placeholder": ""
+                  }
+                },
+                "imagelocation": {
+                  "type": "Boolean",
+                  "config": {
+                    "label": "ImageLocation",
+                    "placeholder_false": "Left",
+                    "placeholder_true": "Right",
+                    "default_value": false
+                  }
+                },
+                "heading": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Heading",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "heading2"
+                  }
+                },
+                "firstcontentsection": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "FirstContentSection",
+                    "placeholder": "Enter content about the spotlight",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "secondcontentsection": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "SecondContentSection",
+                    "placeholder": "Enter more description here",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {
+                "itemtext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Item Text",
+                    "placeholder": ""
+                  }
+                },
+                "icon": {
+                  "type": "Select",
+                  "config": {
+                    "label": "Icon",
+                    "placeholder": "",
+                    "options": [
+                      "Award",
+                      "Check",
+                      "Medal",
+                      "Star",
+                      "Swimmer"
+                    ]
+                  }
+                },
+                "itemtooltip": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Item Tooltip",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            },
+            {
+              "id": "accent",
+              "name": "Accent",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Spotlight",
+              "primary": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "imagetooltip": {
+                  "type": "Text",
+                  "config": {
+                    "label": "ImageToolTip",
+                    "placeholder": ""
+                  }
+                },
+                "imagelocation": {
+                  "type": "Boolean",
+                  "config": {
+                    "label": "ImageLocation",
+                    "placeholder_false": "Left",
+                    "placeholder_true": "Right",
+                    "default_value": false
+                  }
+                },
+                "heading": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Heading",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "heading2"
+                  }
+                },
+                "firstcontentsection": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "FirstContentSection",
+                    "placeholder": "Enter content about the spotlight",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "secondcontentsection": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "SecondContentSection",
+                    "placeholder": "Enter more description here",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {
+                "itemtext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Item Text",
+                    "placeholder": ""
+                  }
+                },
+                "icon": {
+                  "type": "Select",
+                  "config": {
+                    "label": "Icon",
+                    "placeholder": "",
+                    "options": [
+                      "Award",
+                      "Check",
+                      "Medal",
+                      "Star",
+                      "Swimmer"
+                    ]
+                  }
+                },
+                "itemtooltip": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Item Tooltip",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
             }
           ]
         },
@@ -371,9 +644,9 @@
             "version": "sktwi1xtmkfgx8626",
             "items": [
               {
-                "itemtext": "business",
-                "icon": "Medal",
-                "itemtooltip": "sets"
+                "itemtext": "dog",
+                "icon": "Check",
+                "itemtooltip": "very"
               }
             ],
             "primary": {
@@ -386,31 +659,174 @@
                 "copyright": null,
                 "url": "https://images.unsplash.com/photo-1487491506942-373c8f7a7ad5"
               },
-              "imagetooltip": "exclaimed",
+              "imagetooltip": "drew",
               "imagelocation": true,
               "heading": [
                 {
                   "type": "heading2",
-                  "text": "Specific",
+                  "text": "Collect",
                   "spans": []
                 }
               ],
               "firstcontentsection": [
                 {
                   "type": "paragraph",
-                  "text": "Ad pariatur nostrud dolore ea voluptate Lorem velit eiusmod labore non qui. Ex dolor nostrud quis sunt reprehenderit cupidatat nulla dolore occaecat. Adipisicing tempor ea amet elit dolor aliquip nisi consequat.",
+                  "text": "Qui pariatur exercitation pariatur pariatur id ipsum. Ullamco eu esse ad exercitation id nostrud commodo consectetur.",
                   "spans": []
                 }
               ],
               "secondcontentsection": [
                 {
                   "type": "paragraph",
-                  "text": "In velit labore aliquip incididunt excepteur culpa culpa ad nulla sunt minim aute aute incididunt. Id qui anim consectetur ut Lorem. Ullamco cillum laborum dolore cillum sint sunt irure dolor id officia pariatur velit magna veniam adipisicing.",
+                  "text": "Sit mollit laboris elit ad adipisicing. Dolore culpa aliqua cillum sit eu Lorem. Culpa incididunt proident nostrud in non id dolor irure laboris aliquip minim amet.",
                   "spans": []
                 },
                 {
                   "type": "paragraph",
-                  "text": "Culpa quis fugiat tempor excepteur adipisicing consequat ad cillum est deserunt Lorem culpa do aliquip. Fugiat in adipisicing dolore reprehenderit proident minim ad voluptate cillum officia pariatur.",
+                  "text": "Velit eiusmod quis commodo elit velit cupidatat non cupidatat minim. Incididunt amet veniam nostrud eu proident et consequat. Lorem ipsum reprehenderit magna pariatur cillum reprehenderit.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "spotlight"
+          },
+          "primary": {
+            "variation": "primary",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "itemtext": "journey",
+                "icon": "Swimmer",
+                "itemtooltip": "half"
+              }
+            ],
+            "primary": {
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1487491506942-373c8f7a7ad5"
+              },
+              "imagetooltip": "seven",
+              "imagelocation": true,
+              "heading": [
+                {
+                  "type": "heading2",
+                  "text": "Driver",
+                  "spans": []
+                }
+              ],
+              "firstcontentsection": [
+                {
+                  "type": "paragraph",
+                  "text": "Laborum consequat do esse occaecat labore qui occaecat magna officia aliquip ipsum. Magna adipisicing commodo officia commodo cillum Lorem tempor aute. Veniam esse pariatur deserunt et labore proident ex.",
+                  "spans": []
+                }
+              ],
+              "secondcontentsection": [
+                {
+                  "type": "paragraph",
+                  "text": "Elit veniam in ullamco eu velit esse culpa nisi do exercitation amet anim.",
+                  "spans": []
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Elit pariatur id sunt. Fugiat dolor commodo elit quis fugiat culpa dolor. Cillum sunt consequat consectetur occaecat consequat adipisicing deserunt quis sint est et in non tempor.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "spotlight"
+          },
+          "secondary": {
+            "variation": "secondary",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "itemtext": "friendly",
+                "icon": "Medal",
+                "itemtooltip": "bar"
+              }
+            ],
+            "primary": {
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1487491506942-373c8f7a7ad5"
+              },
+              "imagetooltip": "thumb",
+              "imagelocation": false,
+              "heading": [
+                {
+                  "type": "heading2",
+                  "text": "Shallow",
+                  "spans": []
+                }
+              ],
+              "firstcontentsection": [
+                {
+                  "type": "paragraph",
+                  "text": "Excepteur in officia reprehenderit dolore excepteur quis ad culpa aliquip eu Lorem tempor mollit consectetur pariatur.",
+                  "spans": []
+                }
+              ],
+              "secondcontentsection": [
+                {
+                  "type": "paragraph",
+                  "text": "Aute laborum amet occaecat eu laboris esse duis aliqua consectetur id. Deserunt exercitation fugiat ea ut aute cupidatat veniam culpa culpa tempor exercitation ullamco cillum non.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "spotlight"
+          },
+          "accent": {
+            "variation": "accent",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "itemtext": "silence",
+                "icon": "Swimmer",
+                "itemtooltip": "flight"
+              }
+            ],
+            "primary": {
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1487491506942-373c8f7a7ad5"
+              },
+              "imagetooltip": "vessels",
+              "imagelocation": false,
+              "heading": [
+                {
+                  "type": "heading2",
+                  "text": "Having",
+                  "spans": []
+                }
+              ],
+              "firstcontentsection": [
+                {
+                  "type": "paragraph",
+                  "text": "Id tempor excepteur sunt consectetur consequat. Mollit id et duis non laboris amet amet sint ipsum et deserunt est.",
+                  "spans": []
+                }
+              ],
+              "secondcontentsection": [
+                {
+                  "type": "paragraph",
+                  "text": "Aliquip nostrud excepteur culpa amet aute nulla proident irure laborum.",
                   "spans": []
                 }
               ]
@@ -427,6 +843,21 @@
             "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/Spotlight/default/preview.png",
             "width": 1242,
             "height": 863
+          },
+          "primary": {
+            "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/Spotlight/primary/preview.png",
+            "width": 1558,
+            "height": 950
+          },
+          "secondary": {
+            "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/Spotlight/secondary/preview.png",
+            "width": 1521,
+            "height": 1038
+          },
+          "accent": {
+            "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/Spotlight/accent/preview.png",
+            "width": 1471,
+            "height": 1037
           }
         }
       }

@@ -7,7 +7,7 @@ import { SliceZone } from '@prismicio/react'
 
 const Navbar = ({ largebuttonlink, largebuttontext, slices }) => {
   return (
-    <Headroom>
+    <Headroom style={{ zIndex: '11' }}>
       <div className="navbar px-4 md:px-6 lg:px-8 xl:px-10">
         <div className="navbar-start">
           <div className="dropdown">

@@ -94,6 +94,279 @@
         }
       },
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    },
+    {
+      "id": "primary",
+      "name": "Primary",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Spotlight",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imagetooltip": {
+          "type": "Text",
+          "config": {
+            "label": "ImageToolTip",
+            "placeholder": ""
+          }
+        },
+        "imagelocation": {
+          "type": "Boolean",
+          "config": {
+            "label": "ImageLocation",
+            "placeholder_false": "Left",
+            "placeholder_true": "Right",
+            "default_value": false
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "firstcontentsection": {
+          "type": "StructuredText",
+          "config": {
+            "label": "FirstContentSection",
+            "placeholder": "Enter content about the spotlight",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "secondcontentsection": {
+          "type": "StructuredText",
+          "config": {
+            "label": "SecondContentSection",
+            "placeholder": "Enter more description here",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "itemtext": {
+          "type": "Text",
+          "config": {
+            "label": "Item Text",
+            "placeholder": ""
+          }
+        },
+        "icon": {
+          "type": "Select",
+          "config": {
+            "label": "Icon",
+            "placeholder": "",
+            "options": [
+              "Award",
+              "Check",
+              "Medal",
+              "Star",
+              "Swimmer"
+            ]
+          }
+        },
+        "itemtooltip": {
+          "type": "Text",
+          "config": {
+            "label": "Item Tooltip",
+            "placeholder": ""
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    },
+    {
+      "id": "secondary",
+      "name": "Secondary",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Spotlight",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imagetooltip": {
+          "type": "Text",
+          "config": {
+            "label": "ImageToolTip",
+            "placeholder": ""
+          }
+        },
+        "imagelocation": {
+          "type": "Boolean",
+          "config": {
+            "label": "ImageLocation",
+            "placeholder_false": "Left",
+            "placeholder_true": "Right",
+            "default_value": false
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "firstcontentsection": {
+          "type": "StructuredText",
+          "config": {
+            "label": "FirstContentSection",
+            "placeholder": "Enter content about the spotlight",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "secondcontentsection": {
+          "type": "StructuredText",
+          "config": {
+            "label": "SecondContentSection",
+            "placeholder": "Enter more description here",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "itemtext": {
+          "type": "Text",
+          "config": {
+            "label": "Item Text",
+            "placeholder": ""
+          }
+        },
+        "icon": {
+          "type": "Select",
+          "config": {
+            "label": "Icon",
+            "placeholder": "",
+            "options": [
+              "Award",
+              "Check",
+              "Medal",
+              "Star",
+              "Swimmer"
+            ]
+          }
+        },
+        "itemtooltip": {
+          "type": "Text",
+          "config": {
+            "label": "Item Tooltip",
+            "placeholder": ""
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    },
+    {
+      "id": "accent",
+      "name": "Accent",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Spotlight",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imagetooltip": {
+          "type": "Text",
+          "config": {
+            "label": "ImageToolTip",
+            "placeholder": ""
+          }
+        },
+        "imagelocation": {
+          "type": "Boolean",
+          "config": {
+            "label": "ImageLocation",
+            "placeholder_false": "Left",
+            "placeholder_true": "Right",
+            "default_value": false
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "firstcontentsection": {
+          "type": "StructuredText",
+          "config": {
+            "label": "FirstContentSection",
+            "placeholder": "Enter content about the spotlight",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "secondcontentsection": {
+          "type": "StructuredText",
+          "config": {
+            "label": "SecondContentSection",
+            "placeholder": "Enter more description here",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "itemtext": {
+          "type": "Text",
+          "config": {
+            "label": "Item Text",
+            "placeholder": ""
+          }
+        },
+        "icon": {
+          "type": "Select",
+          "config": {
+            "label": "Icon",
+            "placeholder": "",
+            "options": [
+              "Award",
+              "Check",
+              "Medal",
+              "Star",
+              "Swimmer"
+            ]
+          }
+        },
+        "itemtooltip": {
+          "type": "Text",
+          "config": {
+            "label": "Item Tooltip",
+            "placeholder": ""
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]
 }

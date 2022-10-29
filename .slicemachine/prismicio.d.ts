@@ -35,7 +35,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice = HeroSlice | SpotlightSlice;
 /**
  * Homepage document from Prismic
  *
@@ -473,10 +473,346 @@ export interface SpotlightSliceDefaultItem {
  */
 export type SpotlightSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SpotlightSliceDefaultPrimary>, Simplify<SpotlightSliceDefaultItem>>;
 /**
+ * Primary content in Spotlight → Primary
+ *
+ */
+interface SpotlightSlicePrimaryPrimary {
+    /**
+     * Image field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * ImageToolTip field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.primary.imagetooltip
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    imagetooltip: prismicT.KeyTextField;
+    /**
+     * ImageLocation field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: spotlight.primary.imagelocation
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    imagelocation: prismicT.BooleanField;
+    /**
+     * Heading field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.primary.heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heading: prismicT.TitleField;
+    /**
+     * FirstContentSection field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Enter content about the spotlight
+     * - **API ID Path**: spotlight.primary.firstcontentsection
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    firstcontentsection: prismicT.RichTextField;
+    /**
+     * SecondContentSection field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Enter more description here
+     * - **API ID Path**: spotlight.primary.secondcontentsection
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    secondcontentsection: prismicT.RichTextField;
+}
+/**
+ * Item in Spotlight → Items
+ *
+ */
+export interface SpotlightSlicePrimaryItem {
+    /**
+     * Item Text field in *Spotlight → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.items[].itemtext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    itemtext: prismicT.KeyTextField;
+    /**
+     * Icon field in *Spotlight → Items*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.items[].icon
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    icon: prismicT.SelectField<"Award" | "Check" | "Medal" | "Star" | "Swimmer">;
+    /**
+     * Item Tooltip field in *Spotlight → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.items[].itemtooltip
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    itemtooltip: prismicT.KeyTextField;
+}
+/**
+ * Primary variation for Spotlight Slice
+ *
+ * - **API ID**: `primary`
+ * - **Description**: `Spotlight`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SpotlightSlicePrimary = prismicT.SharedSliceVariation<"primary", Simplify<SpotlightSlicePrimaryPrimary>, Simplify<SpotlightSlicePrimaryItem>>;
+/**
+ * Primary content in Spotlight → Primary
+ *
+ */
+interface SpotlightSliceSecondaryPrimary {
+    /**
+     * Image field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * ImageToolTip field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.primary.imagetooltip
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    imagetooltip: prismicT.KeyTextField;
+    /**
+     * ImageLocation field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: spotlight.primary.imagelocation
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    imagelocation: prismicT.BooleanField;
+    /**
+     * Heading field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.primary.heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heading: prismicT.TitleField;
+    /**
+     * FirstContentSection field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Enter content about the spotlight
+     * - **API ID Path**: spotlight.primary.firstcontentsection
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    firstcontentsection: prismicT.RichTextField;
+    /**
+     * SecondContentSection field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Enter more description here
+     * - **API ID Path**: spotlight.primary.secondcontentsection
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    secondcontentsection: prismicT.RichTextField;
+}
+/**
+ * Item in Spotlight → Items
+ *
+ */
+export interface SpotlightSliceSecondaryItem {
+    /**
+     * Item Text field in *Spotlight → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.items[].itemtext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    itemtext: prismicT.KeyTextField;
+    /**
+     * Icon field in *Spotlight → Items*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.items[].icon
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    icon: prismicT.SelectField<"Award" | "Check" | "Medal" | "Star" | "Swimmer">;
+    /**
+     * Item Tooltip field in *Spotlight → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.items[].itemtooltip
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    itemtooltip: prismicT.KeyTextField;
+}
+/**
+ * Secondary variation for Spotlight Slice
+ *
+ * - **API ID**: `secondary`
+ * - **Description**: `Spotlight`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SpotlightSliceSecondary = prismicT.SharedSliceVariation<"secondary", Simplify<SpotlightSliceSecondaryPrimary>, Simplify<SpotlightSliceSecondaryItem>>;
+/**
+ * Primary content in Spotlight → Primary
+ *
+ */
+interface SpotlightSliceAccentPrimary {
+    /**
+     * Image field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * ImageToolTip field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.primary.imagetooltip
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    imagetooltip: prismicT.KeyTextField;
+    /**
+     * ImageLocation field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: spotlight.primary.imagelocation
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    imagelocation: prismicT.BooleanField;
+    /**
+     * Heading field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.primary.heading
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heading: prismicT.TitleField;
+    /**
+     * FirstContentSection field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Enter content about the spotlight
+     * - **API ID Path**: spotlight.primary.firstcontentsection
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    firstcontentsection: prismicT.RichTextField;
+    /**
+     * SecondContentSection field in *Spotlight → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Enter more description here
+     * - **API ID Path**: spotlight.primary.secondcontentsection
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    secondcontentsection: prismicT.RichTextField;
+}
+/**
+ * Item in Spotlight → Items
+ *
+ */
+export interface SpotlightSliceAccentItem {
+    /**
+     * Item Text field in *Spotlight → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.items[].itemtext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    itemtext: prismicT.KeyTextField;
+    /**
+     * Icon field in *Spotlight → Items*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.items[].icon
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    icon: prismicT.SelectField<"Award" | "Check" | "Medal" | "Star" | "Swimmer">;
+    /**
+     * Item Tooltip field in *Spotlight → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: spotlight.items[].itemtooltip
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    itemtooltip: prismicT.KeyTextField;
+}
+/**
+ * Accent variation for Spotlight Slice
+ *
+ * - **API ID**: `accent`
+ * - **Description**: `Spotlight`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SpotlightSliceAccent = prismicT.SharedSliceVariation<"accent", Simplify<SpotlightSliceAccentPrimary>, Simplify<SpotlightSliceAccentItem>>;
+/**
  * Slice variation for *Spotlight*
  *
  */
-type SpotlightSliceVariation = SpotlightSliceDefault;
+type SpotlightSliceVariation = SpotlightSliceDefault | SpotlightSlicePrimary | SpotlightSliceSecondary | SpotlightSliceAccent;
 /**
  * Spotlight Shared Slice
  *
@@ -491,6 +827,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataSlicesSlice, MainmenuDocument, PageDocumentData, PageDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, MainMenuItemSliceDefaultPrimary, MainMenuItemSliceDefault, MainMenuItemSliceMainMenuItemWithDropdownPrimary, MainMenuItemSliceMainMenuItemWithDropdownItem, MainMenuItemSliceMainMenuItemWithDropdown, MainMenuItemSliceVariation, MainMenuItemSlice, SpotlightSliceDefaultPrimary, SpotlightSliceDefaultItem, SpotlightSliceDefault, SpotlightSliceVariation, SpotlightSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataSlicesSlice, MainmenuDocument, PageDocumentData, PageDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, MainMenuItemSliceDefaultPrimary, MainMenuItemSliceDefault, MainMenuItemSliceMainMenuItemWithDropdownPrimary, MainMenuItemSliceMainMenuItemWithDropdownItem, MainMenuItemSliceMainMenuItemWithDropdown, MainMenuItemSliceVariation, MainMenuItemSlice, SpotlightSliceDefaultPrimary, SpotlightSliceDefaultItem, SpotlightSliceDefault, SpotlightSlicePrimaryPrimary, SpotlightSlicePrimaryItem, SpotlightSlicePrimary, SpotlightSliceSecondaryPrimary, SpotlightSliceSecondaryItem, SpotlightSliceSecondary, SpotlightSliceAccentPrimary, SpotlightSliceAccentItem, SpotlightSliceAccent, SpotlightSliceVariation, SpotlightSlice };
     }
 }

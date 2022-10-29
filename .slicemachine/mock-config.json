@@ -79,6 +79,36 @@
           }
         },
         "items": {}
+      },
+      "primary": {
+        "primary": {
+          "secondcontentsection": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 2
+            }
+          },
+          "image": {
+            "content": "https://images.unsplash.com/photo-1487491506942-373c8f7a7ad5"
+          },
+          "imagelocation": {
+            "content": true
+          }
+        }
+      },
+      "secondary": {
+        "primary": {
+          "image": {
+            "content": "https://images.unsplash.com/photo-1487491506942-373c8f7a7ad5"
+          }
+        }
+      },
+      "accent": {
+        "primary": {
+          "image": {
+            "content": "https://images.unsplash.com/photo-1487491506942-373c8f7a7ad5"
+          }
+        }
       }
     }
   }
