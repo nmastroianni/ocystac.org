@@ -60,7 +60,17 @@ const Spotlight = ({ slice }) => {
     },
     paragraph: ({ node, children }) => {
       return (
-        <p className="prose text-base-100 lg:prose-lg xl:prose-xl">
+        <p
+          className={`prose ${
+            variation === 'primary'
+              ? `text-base-100`
+              : variation === 'secondary'
+              ? `text-base-100`
+              : variation === 'accent'
+              ? `text-gray-800`
+              : `text-base-100`
+          } lg:prose-lg xl:prose-xl`}
+        >
           {children}
         </p>
       )
@@ -98,7 +108,7 @@ const Spotlight = ({ slice }) => {
             : variation === 'secondary'
             ? `text-accent`
             : variation === 'accent'
-            ? `text-neutral`
+            ? `text-black`
             : `text-primary`
         }`}
       >
@@ -141,7 +151,7 @@ const Spotlight = ({ slice }) => {
       >
         <div className="mb-12 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-5/12">
           <div
-            className={`tooltip tooltip-primary flex lg:py-12`}
+            className={`tooltip tooltip-accent flex lg:py-12`}
             data-tip={imagetooltip}
           >
             <PrismicNextImage
@@ -185,7 +195,15 @@ const Spotlight = ({ slice }) => {
                     return (
                       <p
                         key={item.itemtext}
-                        className={`tooltip tooltip-primary flex items-center md:mx-0 md:mb-2 lg:mb-0`}
+                        className={`tooltip flex items-center md:mx-0 md:mb-2 lg:mb-0 ${
+                          variation === 'primary'
+                            ? `text-base-100`
+                            : variation === 'secondary'
+                            ? `text-base-100`
+                            : variation === 'accent'
+                            ? `text-gray-800`
+                            : `text-base-100`
+                        }`}
                         data-tip={item.itemtooltip}
                       >
                         <Icon name={item.icon} className="mr-2 h-4 w-4" />
