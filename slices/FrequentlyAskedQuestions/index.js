@@ -30,7 +30,7 @@ const FrequentlyAskedQuestions = ({ slice }) => {
   const templates = {
     heading2: ({ children }) => {
       return (
-        <h2 className="text-2xl font-bold text-secondary md:text-3xl lg:text-4xl">
+        <h2 className="text-center text-2xl font-bold text-secondary md:text-3xl lg:text-left lg:text-4xl">
           {children}
         </h2>
       )

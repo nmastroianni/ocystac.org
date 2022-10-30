@@ -5,8 +5,9 @@ import { createClient } from '../prismicio'
 import { components } from '../slices'
 import Layout from '../components/Layout'
 import Icon from '../components/Icon'
+import EventCard from '../components/EventCard'
 
-const Page = ({ page, navigation, siteMetadata }) => {
+const Page = ({ page, navigation, siteMetadata, events }) => {
   const templates = {
     heading1: ({ node, children }) => {
       return (
@@ -67,6 +68,19 @@ const Page = ({ page, navigation, siteMetadata }) => {
         <div className="prose mx-auto my-4 md:my-6 md:prose-lg lg:my-8 lg:prose-xl xl:my-10 xl:prose-2xl">
           <PrismicRichText field={page.data.title} components={templates} />
         </div>
+        <section>
+          <ol>
+            {events !== 'loading' &&
+              events.length > 0 &&
+              events.map(event => {
+                return (
+                  <li key={event.id} className="mx-2">
+                    <EventCard {...event} />
+                  </li>
+                )
+              })}
+          </ol>
+        </section>
         {page.data.slices.length > 0 && (
           <SliceZone slices={page.data.slices} components={components} />
         )}
@@ -84,12 +98,30 @@ export async function getStaticProps({ params, previewData }) {
   const navigation = await client.getSingle('mainmenu')
   // const footer = await client.getSingle('footer')
 
+  /**
+   * Check if page is Calendar page
+   * Grab Calendar Data
+   */
+  let events = 'loading'
+  if (params.uid === 'calendar') {
+    events = await fetch(
+      `https://content.googleapis.com/calendar/v3/calendars/${process.env.CALENDAR_ID}/events?key=${process.env.CALENDAR_API_KEY}&singleEvents=true&orderBy=startTime`
+    )
+      .then(response => response.json())
+      .then(res => {
+        const currentEvents = res.items.filter(
+          item => new Date(item.end.dateTime) > new Date().setHours(0, 0, 0, 0)
+        )
+        return currentEvents
+      })
+  }
+
   return {
     props: {
       navigation,
       page,
       siteMetadata,
-      // footer,
+      events,
     },
     revalidate: 60 * 15,
   }
