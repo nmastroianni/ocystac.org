@@ -225,7 +225,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeroSlice | SpotlightSlice | ContentSlice;
+type PageDocumentDataSlicesSlice = HeroSlice | SpotlightSlice | ContentSlice | FrequentlyAskedQuestionsSlice;
 /**
  * Page document from Prismic
  *
@@ -344,6 +344,81 @@ type ContentSliceVariation = ContentSliceDefault;
  *
  */
 export type ContentSlice = prismicT.SharedSlice<"content", ContentSliceVariation>;
+/**
+ * Primary content in FrequentlyAskedQuestions → Primary
+ *
+ */
+interface FrequentlyAskedQuestionsSliceDefaultPrimary {
+    /**
+     * Title field in *FrequentlyAskedQuestions → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Enter FAQ title
+     * - **API ID Path**: frequently_asked_questions.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *FrequentlyAskedQuestions → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Optionally describe FAQ
+     * - **API ID Path**: frequently_asked_questions.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Item in FrequentlyAskedQuestions → Items
+ *
+ */
+export interface FrequentlyAskedQuestionsSliceDefaultItem {
+    /**
+     * Question field in *FrequentlyAskedQuestions → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: Enter a question to answer
+     * - **API ID Path**: frequently_asked_questions.items[].question
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    question: prismicT.KeyTextField;
+    /**
+     * Answer field in *FrequentlyAskedQuestions → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Enter answer
+     * - **API ID Path**: frequently_asked_questions.items[].answer
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    answer: prismicT.RichTextField;
+}
+/**
+ * Default variation for FrequentlyAskedQuestions Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `FrequentlyAskedQuestions`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FrequentlyAskedQuestionsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FrequentlyAskedQuestionsSliceDefaultPrimary>, Simplify<FrequentlyAskedQuestionsSliceDefaultItem>>;
+/**
+ * Slice variation for *FrequentlyAskedQuestions*
+ *
+ */
+type FrequentlyAskedQuestionsSliceVariation = FrequentlyAskedQuestionsSliceDefault;
+/**
+ * FrequentlyAskedQuestions Shared Slice
+ *
+ * - **API ID**: `frequently_asked_questions`
+ * - **Description**: `FrequentlyAskedQuestions`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FrequentlyAskedQuestionsSlice = prismicT.SharedSlice<"frequently_asked_questions", FrequentlyAskedQuestionsSliceVariation>;
 /**
  * Primary content in Hero → Primary
  *
@@ -1027,6 +1102,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataSlicesSlice, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, MainMenuItemSliceDefaultPrimary, MainMenuItemSliceDefault, MainMenuItemSliceMainMenuItemWithDropdownPrimary, MainMenuItemSliceMainMenuItemWithDropdownItem, MainMenuItemSliceMainMenuItemWithDropdown, MainMenuItemSliceVariation, MainMenuItemSlice, SpotlightSliceDefaultPrimary, SpotlightSliceDefaultItem, SpotlightSliceDefault, SpotlightSlicePrimaryPrimary, SpotlightSlicePrimaryItem, SpotlightSlicePrimary, SpotlightSliceSecondaryPrimary, SpotlightSliceSecondaryItem, SpotlightSliceSecondary, SpotlightSliceAccentPrimary, SpotlightSliceAccentItem, SpotlightSliceAccent, SpotlightSliceVariation, SpotlightSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataSlicesSlice, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, FrequentlyAskedQuestionsSliceDefaultPrimary, FrequentlyAskedQuestionsSliceDefaultItem, FrequentlyAskedQuestionsSliceDefault, FrequentlyAskedQuestionsSliceVariation, FrequentlyAskedQuestionsSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, MainMenuItemSliceDefaultPrimary, MainMenuItemSliceDefault, MainMenuItemSliceMainMenuItemWithDropdownPrimary, MainMenuItemSliceMainMenuItemWithDropdownItem, MainMenuItemSliceMainMenuItemWithDropdown, MainMenuItemSliceVariation, MainMenuItemSlice, SpotlightSliceDefaultPrimary, SpotlightSliceDefaultItem, SpotlightSliceDefault, SpotlightSlicePrimaryPrimary, SpotlightSlicePrimaryItem, SpotlightSlicePrimary, SpotlightSliceSecondaryPrimary, SpotlightSliceSecondaryItem, SpotlightSliceSecondary, SpotlightSliceAccentPrimary, SpotlightSliceAccentItem, SpotlightSliceAccent, SpotlightSliceVariation, SpotlightSlice };
     }
 }

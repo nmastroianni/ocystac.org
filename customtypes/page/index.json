@@ -64,6 +64,9 @@
             },
             "content": {
               "type": "SharedSlice"
+            },
+            "frequently_asked_questions": {
+              "type": "SharedSlice"
             }
           }
         }

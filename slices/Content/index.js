@@ -1,6 +1,7 @@
 import React from 'react'
-import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import { PrismicRichText } from '@prismicio/react'
 import { PrismicNextImage } from '@prismicio/next'
+import PrismicNextLink from '../../components/PrismicNextLink'
 
 /**
  * @typedef {import("@prismicio/client").Content.ContentSlice} ContentSlice
@@ -23,9 +24,9 @@ const Content = ({ slice }) => {
     },
     hyperlink: ({ node, children }) => {
       return (
-        <PrismicLink field={node.data} className="text-primary">
+        <PrismicNextLink field={node.data} className="text-primary">
           {children}
-        </PrismicLink>
+        </PrismicNextLink>
       )
     },
     image: ({ node, children }) => {

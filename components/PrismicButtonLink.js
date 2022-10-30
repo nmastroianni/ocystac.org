@@ -1,42 +1,42 @@
-import { PrismicLink } from '@prismicio/react'
+import PrismicNextLink from './PrismicNextLink'
 
 const PrismicButtonLink = ({ link, type, text }) => {
   switch (type) {
     case 'Primary':
       return (
-        <PrismicLink
+        <PrismicNextLink
           field={link}
           className={`btn-primary btn text-base-100 hover:bg-orange-600`}
         >
           {text}
-        </PrismicLink>
+        </PrismicNextLink>
       )
     case 'Accent':
       return (
-        <PrismicLink
+        <PrismicNextLink
           field={link}
           className={`btn-accent btn text-secondary hover:text-base-100`}
         >
           {text}
-        </PrismicLink>
+        </PrismicNextLink>
       )
     case 'Ghost':
       return (
-        <PrismicLink
+        <PrismicNextLink
           field={link}
           className={`btn-ghost btn text-accent hover:bg-base-100 hover:text-secondary`}
         >
           {text}
-        </PrismicLink>
+        </PrismicNextLink>
       )
     default:
       return (
-        <PrismicLink
+        <PrismicNextLink
           field={link}
           className={`btn-secondary btn text-base-100 hover:bg-blue-700`}
         >
           {text}
-        </PrismicLink>
+        </PrismicNextLink>
       )
   }
 }

@@ -126,6 +126,35 @@
           }
         }
       }
+    },
+    "FrequentlyAskedQuestions": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 2
+            }
+          }
+        },
+        "items": {
+          "answer": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "question": {
+            "content": "What can I do to help at a swim meet?"
+          }
+        }
+      }
     }
   }
 }

@@ -80,6 +80,117 @@
           }
         }
       },
+      "frequently_asked_questions": {
+        "library": "slices",
+        "id": "frequently_asked_questions",
+        "name": "FrequentlyAskedQuestions",
+        "description": "FrequentlyAskedQuestions",
+        "model": {
+          "id": "frequently_asked_questions",
+          "type": "SharedSlice",
+          "name": "FrequentlyAskedQuestions",
+          "description": "FrequentlyAskedQuestions",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "FrequentlyAskedQuestions",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "Enter FAQ title",
+                    "allowTargetBlank": true,
+                    "single": "heading2,heading3,heading4,heading5,heading6"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Description",
+                    "placeholder": "Optionally describe FAQ",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,list-item,o-list-item"
+                  }
+                }
+              },
+              "items": {
+                "question": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Question",
+                    "placeholder": "Enter a question to answer"
+                  }
+                },
+                "answer": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Answer",
+                    "placeholder": "Enter answer",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "question": "What can I do to help at a swim meet?",
+                "answer": [
+                  {
+                    "type": "paragraph",
+                    "text": "Adipisicing est in pariatur aliqua.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading2",
+                  "text": "Surprise",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Minim sit irure dolor.",
+                  "spans": []
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Non consequat eu adipisicing nostrud sit nisi amet fugiat consectetur est elit.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "frequently_asked_questions"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/FrequentlyAskedQuestions/default/preview.png",
+            "width": 691,
+            "height": 592
+          }
+        }
+      },
       "hero": {
         "library": "slices",
         "id": "hero",
