@@ -78,7 +78,7 @@ const FrequentlyAskedQuestions = ({ slice }) => {
     },
   }
   return (
-    <section className="mx-auto my-4 grid max-w-screen-sm gap-y-4 md:my-6 md:gap-y-6 lg:my-8 lg:gap-y-8 xl:my-10">
+    <section className="mx-auto my-4 grid max-w-screen-sm gap-y-4 px-4 md:my-6 md:gap-y-6 lg:my-8 lg:gap-y-8 xl:my-10">
       {title.length > 0 && (
         <PrismicRichText field={title} components={templates} />
       )}
