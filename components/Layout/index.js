@@ -1,6 +1,15 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
 const Layout = ({ children, navigation, sitelogo }) => {
+  const getLogo = (navdata, metadata) => {
+    if (Object.keys(navdata.data.logo).length > 0) {
+      return navdata.data.logo
+    } else {
+      return metadata
+    }
+  }
+  const logo = getLogo(navigation, sitelogo)
+  console.log('layout says...', logo)
   return (
     <div className="relative">
       <ul id="nav-access" className="relative mx-auto">
@@ -21,7 +30,7 @@ const Layout = ({ children, navigation, sitelogo }) => {
         <header>
           <Navbar
             {...navigation.data}
-            logo={sitelogo}
+            logo={logo}
             // navigationlinks={navigationlinks}
             // sociallinks={sociallinks}
           />

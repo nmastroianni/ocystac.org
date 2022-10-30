@@ -35,10 +35,7 @@ const Content = ({ slice }) => {
           data-tip={node.alt}
         >
           <a href={node.url} target="_blank" rel="noreferrer">
-            <PrismicNextImage
-              field={node}
-              className="rounded shadow-sm transition duration-300 ease-in-out hover:shadow-lg hover:shadow-accent"
-            />
+            <PrismicNextImage field={node} className="rounded-lg" />
           </a>
         </div>
       )

@@ -7,6 +7,18 @@ import Layout from '../components/Layout'
 import Icon from '../components/Icon'
 
 const Page = ({ page, navigation, siteMetadata }) => {
+  const templates = {
+    heading1: ({ node, children }) => {
+      return (
+        <h1
+          className={`mb-6 text-center text-2xl font-bold text-secondary lg:self-start lg:text-left lg:text-3xl xl:text-4xl`}
+        >
+          {children}
+        </h1>
+      )
+    },
+  }
+
   return (
     <Layout className="bg-primary" navigation={navigation}>
       <Head>
@@ -48,6 +60,9 @@ const Page = ({ page, navigation, siteMetadata }) => {
         />
       </Head>
       <div className="grid grid-cols-1 gap-y-4 md:gap-y-0">
+        <div className="prose mx-auto my-4 md:my-6 md:prose-lg lg:my-8 lg:prose-xl xl:my-10 xl:prose-2xl">
+          <PrismicRichText field={page.data.title} components={templates} />
+        </div>
         {page.data.slices.length > 0 && (
           <SliceZone slices={page.data.slices} components={components} />
         )}

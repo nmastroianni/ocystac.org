@@ -5,6 +5,7 @@ import { PrismicLink } from '@prismicio/react'
 import { components } from '../../slices'
 import { SliceZone } from '@prismicio/react'
 import { PrismicNextImage } from '@prismicio/next'
+import PrismicNextLink from '../PrismicNextLink'
 
 const Navbar = ({ largebuttonlink, largebuttontext, logo, slices }) => {
   return (
@@ -38,20 +39,24 @@ const Navbar = ({ largebuttonlink, largebuttontext, logo, slices }) => {
               {slices.length > 0 &&
                 slices.map(slice => {
                   if (slice.variation === 'default') {
+                    console.log(
+                      'NAVBAR default item ---> ',
+                      slice.primary.linktarget
+                    )
                     return (
                       <li key={slice.id}>
-                        <PrismicLink
+                        <PrismicNextLink
                           field={slice.primary.linktarget}
                           className="text-base hover:bg-blue-800"
                         >
                           {slice.primary.linktext}
-                        </PrismicLink>
+                        </PrismicNextLink>
                       </li>
                     )
                   } else {
                     return (
                       <li key={slice.id} tabIndex={0}>
-                        <a className="justify-between text-base hover:bg-blue-800">
+                        <span className="justify-between text-base hover:bg-blue-800">
                           {slice.primary.buttontext}
                           <svg
                             className="fill-current"
@@ -62,19 +67,19 @@ const Navbar = ({ largebuttonlink, largebuttontext, logo, slices }) => {
                           >
                             <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                           </svg>
-                        </a>
+                        </span>
                         <ul className="bg-secondary p-2">
                           {slice.items.length > 0 &&
-                            slice.items.map(subitem => (
-                              <li key={subitem.linktarget.url}>
-                                <PrismicLink
-                                  field={subitem.linktarget}
-                                  className="text-base hover:bg-orange-600"
-                                >
-                                  {subitem.linktext}
-                                </PrismicLink>
-                              </li>
-                            ))}
+                            slice.items.map(subitem => {
+                              console.log('NAVBAR subitem --> ', subitem)
+                              return (
+                                <li key={subitem.linktarget.url}>
+                                  <PrismicNextLink field={subitem.linktarget}>
+                                    {subitem.linktext}
+                                  </PrismicNextLink>
+                                </li>
+                              )
+                            })}
                         </ul>
                       </li>
                     )
@@ -97,22 +102,22 @@ const Navbar = ({ largebuttonlink, largebuttontext, logo, slices }) => {
         </div>
         {/* DESKTOP MENU */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">
+          <ul className="menu menu-horizontal p-0 text-xl">
             <SliceZone slices={slices} components={components} />
           </ul>
         </div>
         {/* END DESKTOP MENU */}
         <div className="navbar-end">
           {largebuttonlink.url && (
-            <PrismicLink
+            <PrismicNextLink
               field={largebuttonlink}
               className="btn-primary btn hidden hover:bg-orange-600 lg:inline-flex"
             >
               {largebuttontext}
-            </PrismicLink>
+            </PrismicNextLink>
           )}
           <div className="lg:hidden">
-            <Image src="/stacSquareLogo.png" alt="" width={120} height={120} />
+            <PrismicNextImage field={logo} width={120} height={120} />
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import PrismicNextLink from '../../components/PrismicNextLink'
 
 /**
  * @typedef {import("@prismicio/client").Content.MainMenuItemSlice} MainMenuItemSlice
@@ -27,12 +27,12 @@ const MainMenuItem = ({ slice }) => {
             {slice.items.length > 0 &&
               slice.items.map(item => (
                 <li key={item.linktarget.url}>
-                  <PrismicLink
+                  <PrismicNextLink
                     field={item.linktarget}
                     className="hover:bg-orange-600"
                   >
                     {item.linktext}
-                  </PrismicLink>
+                  </PrismicNextLink>
                 </li>
               ))}
           </ul>
@@ -41,12 +41,12 @@ const MainMenuItem = ({ slice }) => {
     default:
       return (
         <li>
-          <PrismicLink
+          <PrismicNextLink
             field={slice.primary.linktarget}
             className="hover:bg-blue-800"
           >
             {slice.primary.linktext}
-          </PrismicLink>
+          </PrismicNextLink>
         </li>
       )
   }
