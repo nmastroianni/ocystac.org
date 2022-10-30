@@ -39,10 +39,6 @@ const Navbar = ({ largebuttonlink, largebuttontext, logo, slices }) => {
               {slices.length > 0 &&
                 slices.map(slice => {
                   if (slice.variation === 'default') {
-                    console.log(
-                      'NAVBAR default item ---> ',
-                      slice.primary.linktarget
-                    )
                     return (
                       <li key={slice.id}>
                         <PrismicNextLink
@@ -71,7 +67,6 @@ const Navbar = ({ largebuttonlink, largebuttontext, logo, slices }) => {
                         <ul className="bg-secondary p-2">
                           {slice.items.length > 0 &&
                             slice.items.map(subitem => {
-                              console.log('NAVBAR subitem --> ', subitem)
                               return (
                                 <li key={subitem.linktarget.url}>
                                   <PrismicNextLink field={subitem.linktarget}>
@@ -90,12 +85,6 @@ const Navbar = ({ largebuttonlink, largebuttontext, logo, slices }) => {
           <div className="hidden lg:inline-block">
             <Link href="/">
               <PrismicNextImage field={logo} width={120} height={120} />
-              {/* <Image
-                src="/stacSquareLogo.png"
-                alt=""
-                width={120}
-                height={120}
-              /> */}
               <span className="sr-only">Return to Homepage</span>
             </Link>
           </div>
@@ -117,7 +106,9 @@ const Navbar = ({ largebuttonlink, largebuttontext, logo, slices }) => {
             </PrismicNextLink>
           )}
           <div className="lg:hidden">
-            <PrismicNextImage field={logo} width={120} height={120} />
+            <Link href="/">
+              <PrismicNextImage field={logo} width={120} height={120} />
+            </Link>
           </div>
         </div>
       </div>

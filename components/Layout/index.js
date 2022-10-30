@@ -9,7 +9,6 @@ const Layout = ({ children, navigation, sitelogo }) => {
     }
   }
   const logo = getLogo(navigation, sitelogo)
-  console.log('layout says...', logo)
   return (
     <div className="relative">
       <ul id="nav-access" className="relative mx-auto">

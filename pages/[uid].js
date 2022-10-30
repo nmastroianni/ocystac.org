@@ -20,7 +20,11 @@ const Page = ({ page, navigation, siteMetadata }) => {
   }
 
   return (
-    <Layout className="bg-primary" navigation={navigation}>
+    <Layout
+      className="bg-primary"
+      navigation={navigation}
+      {...siteMetadata.data}
+    >
       <Head>
         <title>{`${prismicH.asText(page.data.title)} · ${
           siteMetadata.data.sitetitle

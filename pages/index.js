@@ -6,7 +6,6 @@ import { SliceZone } from '@prismicio/react'
 import { components } from '../slices'
 
 export default function Home({ page, navigation, siteMetadata }) {
-  // console.log('HomePage ===> ', siteMetadata)
   return (
     <Layout
       className="bg-primary"
