@@ -6,6 +6,9 @@
           "patternType": "HEADING",
           "blocks": 1
         }
+      },
+      "homepagemetaimage": {
+        "content": "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f"
       }
     },
     "page": {
@@ -16,7 +19,8 @@
         }
       }
     },
-    "mainmenu": {}
+    "mainmenu": {},
+    "sitemetadata": {}
   },
   "slices": {
     "MainMenuItem": {
@@ -107,6 +111,18 @@
         "primary": {
           "image": {
             "content": "https://images.unsplash.com/photo-1487491506942-373c8f7a7ad5"
+          }
+        }
+      }
+    },
+    "Content": {
+      "default": {
+        "primary": {
+          "content": {
+            "config": {
+              "patternType": "STORY",
+              "blocks": 1
+            }
           }
         }
       }

@@ -29,7 +29,7 @@ const Spotlight = ({ slice }) => {
         <h2
           className={`mb-6 text-center text-2xl font-bold ${
             variation === 'primary'
-              ? `text-secondary`
+              ? `text-neutral`
               : variation === 'secondary'
               ? `text-accent`
               : variation === 'accent'
@@ -46,7 +46,7 @@ const Spotlight = ({ slice }) => {
         <h3
           className={`text-xl lg:text-2xl xl:text-3xl ${
             variation === 'primary'
-              ? `text-secondary`
+              ? `text-neutral`
               : variation === 'secondary'
               ? `text-accent`
               : variation === 'accent'
@@ -88,13 +88,13 @@ const Spotlight = ({ slice }) => {
           field={node.data}
           className={` ${
             variation === 'primary'
-              ? `text-secondary`
+              ? `text-base-100`
               : variation === 'secondary'
-              ? `text-primary`
+              ? `text-base-100`
               : variation === 'accent'
-              ? `text-secondary`
-              : `text-primary`
-          } no-underline hover:underline`}
+              ? `text-neutral`
+              : `text-base-100`
+          } `}
         >
           {children}
         </PrismicLink>
@@ -102,14 +102,14 @@ const Spotlight = ({ slice }) => {
     },
     strong: ({ node, children }) => (
       <span
-        className={`font-semibold ${
+        className={`font-bold ${
           variation === 'primary'
-            ? `text-gray-800`
+            ? `text-base-100`
             : variation === 'secondary'
-            ? `text-accent`
+            ? `text-base-100`
             : variation === 'accent'
-            ? `text-black`
-            : `text-primary`
+            ? `text-neutral`
+            : `text-base-100`
         }`}
       >
         {children}
@@ -151,7 +151,7 @@ const Spotlight = ({ slice }) => {
       >
         <div className="mb-12 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-5/12">
           <div
-            className={`tooltip tooltip-accent flex lg:py-12`}
+            className={`tooltip tooltip-accent flex lg:my-12`}
             data-tip={imagetooltip}
           >
             <PrismicNextImage

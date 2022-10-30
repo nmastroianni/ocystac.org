@@ -4,8 +4,9 @@ import Headroom from 'react-headroom'
 import { PrismicLink } from '@prismicio/react'
 import { components } from '../../slices'
 import { SliceZone } from '@prismicio/react'
+import { PrismicNextImage } from '@prismicio/next'
 
-const Navbar = ({ largebuttonlink, largebuttontext, slices }) => {
+const Navbar = ({ largebuttonlink, largebuttontext, logo, slices }) => {
   return (
     <Headroom style={{ zIndex: '11' }}>
       <div className="navbar px-4 md:px-6 lg:px-8 xl:px-10">
@@ -41,7 +42,7 @@ const Navbar = ({ largebuttonlink, largebuttontext, slices }) => {
                       <li key={slice.id}>
                         <PrismicLink
                           field={slice.primary.linktarget}
-                          className="hover:bg-blue-800"
+                          className="text-base hover:bg-blue-800"
                         >
                           {slice.primary.linktext}
                         </PrismicLink>
@@ -50,7 +51,7 @@ const Navbar = ({ largebuttonlink, largebuttontext, slices }) => {
                   } else {
                     return (
                       <li key={slice.id} tabIndex={0}>
-                        <a className="justify-between hover:bg-blue-800">
+                        <a className="justify-between text-base hover:bg-blue-800">
                           {slice.primary.buttontext}
                           <svg
                             className="fill-current"
@@ -68,7 +69,7 @@ const Navbar = ({ largebuttonlink, largebuttontext, slices }) => {
                               <li key={subitem.linktarget.url}>
                                 <PrismicLink
                                   field={subitem.linktarget}
-                                  className="hover:bg-orange-600"
+                                  className="text-base hover:bg-orange-600"
                                 >
                                   {subitem.linktext}
                                 </PrismicLink>
@@ -83,12 +84,13 @@ const Navbar = ({ largebuttonlink, largebuttontext, slices }) => {
           </div>
           <div className="hidden lg:inline-block">
             <Link href="/">
-              <Image
+              <PrismicNextImage field={logo} width={120} height={120} />
+              {/* <Image
                 src="/stacSquareLogo.png"
                 alt=""
                 width={120}
                 height={120}
-              />
+              /> */}
               <span className="sr-only">Return to Homepage</span>
             </Link>
           </div>

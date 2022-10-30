@@ -1,7 +1,6 @@
 {
   "id": "mock-doc-id",
-  "uid": "lips",
-  "url": "/lips",
+  "url": null,
   "type": "page",
   "href": null,
   "tags": [],
@@ -15,9 +14,30 @@
     "title": [
       {
         "type": "heading1",
-        "text": "Angle",
+        "text": "Ought",
         "spans": []
       }
-    ]
+    ],
+    "metaimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
+    },
+    "twitterimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1"
+    },
+    "metadescription": "skill",
+    "canonicalurl": "depth",
+    "slices": []
   }
 }

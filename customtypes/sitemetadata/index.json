@@ -1,0 +1,54 @@
+{
+  "id": "sitemetadata",
+  "label": "SiteMetadata",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "sitetitle": {
+        "type": "Text",
+        "config": {
+          "label": "SiteTitle",
+          "placeholder": ""
+        }
+      },
+      "sitemetadescription": {
+        "type": "Text",
+        "config": {
+          "label": "SiteMetaDescription",
+          "placeholder": ""
+        }
+      },
+      "sitemetaimage": {
+        "type": "Image",
+        "config": {
+          "label": "SiteMetaImage",
+          "constraint": {
+            "width": 1200,
+            "height": 630
+          },
+          "thumbnails": []
+        }
+      },
+      "sitetwitterimage": {
+        "type": "Image",
+        "config": {
+          "label": "SiteTwitterImage",
+          "constraint": {
+            "width": 1200,
+            "height": 630
+          },
+          "thumbnails": []
+        }
+      },
+      "sitelogo": {
+        "type": "Image",
+        "config": {
+          "label": "SiteLogo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

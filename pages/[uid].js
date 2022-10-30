@@ -1,18 +1,14 @@
-import Head from 'next/head'
-import Layout from '../components/Layout'
+import { SliceZone, PrismicRichText } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
+import Head from 'next/head'
 import { createClient } from '../prismicio'
-import { SliceZone } from '@prismicio/react'
 import { components } from '../slices'
+import Layout from '../components/Layout'
+import Icon from '../components/Icon'
 
-export default function Home({ page, navigation, siteMetadata }) {
-  // console.log('HomePage ===> ', siteMetadata)
+const Page = ({ page, navigation, siteMetadata }) => {
   return (
-    <Layout
-      className="bg-primary"
-      navigation={navigation}
-      {...siteMetadata.data}
-    >
+    <Layout className="bg-primary" navigation={navigation}>
       <Head>
         <title>{`${prismicH.asText(page.data.title)} · ${
           siteMetadata.data.sitetitle
@@ -21,25 +17,22 @@ export default function Home({ page, navigation, siteMetadata }) {
         <meta
           name="description"
           content={
-            page.data.homepagemetadescription ||
-            siteMetadata.data.sitedescription
+            page.data.metadescription || siteMetadata.data.sitedescription
           }
         />
         <meta
           property="og:description"
           content={
-            page.data.homepagemetadescription ||
-            siteMetadata.data.sitedescription
+            page.data.metadescription || siteMetadata.data.sitedescription
           }
         />
-        <meta property="og:url" content="https://www.ocystac.org" />
+        <meta property="og:url" content={page.data.canonicalurl} />
         <meta property="og:type" content="website" />
 
         <meta
           property="og:image"
           content={
-            page.data.homepagemetaimage.url ||
-            siteMetadata.data.sitemetaimage.url
+            page.data.metaimage.url || siteMetadata.data.sitemetaimage.url
           }
         />
 
@@ -48,8 +41,8 @@ export default function Home({ page, navigation, siteMetadata }) {
         <meta
           property="twitter:image"
           content={
-            page.data.homepagetwitterimage.url ||
-            page.data.homepagemetaimage ||
+            page.data.twitterimage.url ||
+            page.data.metaimage ||
             siteMetadata.data.sitetwitterimage.url
           }
         />
@@ -62,10 +55,12 @@ export default function Home({ page, navigation, siteMetadata }) {
     </Layout>
   )
 }
-export async function getStaticProps({ previewData }) {
+
+export default Page
+export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData })
   const siteMetadata = await client.getSingle('sitemetadata')
-  const page = await client.getSingle('homepage')
+  const page = await client.getByUID('page', params.uid)
 
   const navigation = await client.getSingle('mainmenu')
   // const footer = await client.getSingle('footer')
@@ -77,5 +72,14 @@ export async function getStaticProps({ previewData }) {
       siteMetadata,
       // footer,
     },
+  }
+}
+
+export async function getStaticPaths() {
+  const client = createClient()
+  const pages = await client.getAllByType('page')
+  return {
+    paths: pages.map(page => prismicH.asLink(page)),
+    fallback: false,
   }
 }

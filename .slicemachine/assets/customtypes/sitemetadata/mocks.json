@@ -1,7 +1,7 @@
 {
   "id": "mock-doc-id",
   "url": null,
-  "type": "homepage",
+  "type": "sitemetadata",
   "href": null,
   "tags": [],
   "first_publication_date": "1970-01-01T00:00:01+0000",
@@ -11,32 +11,34 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": [
-      {
-        "type": "heading1",
-        "text": "Mainly",
-        "spans": []
-      }
-    ],
-    "homepagemetadescription": "rise",
-    "homepagemetaimage": {
+    "sitetitle": "something",
+    "sitemetadescription": "bottle",
+    "sitemetaimage": {
       "dimensions": {
         "width": 1200,
         "height": 630
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f"
+      "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51"
     },
-    "homepagetwitterimage": {
+    "sitetwitterimage": {
+      "dimensions": {
+        "width": 1200,
+        "height": 630
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
+    },
+    "sitelogo": {
       "dimensions": {
         "width": 900,
         "height": 500
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa"
-    },
-    "slices": []
+      "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f"
+    }
   }
 }

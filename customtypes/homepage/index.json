@@ -14,6 +14,32 @@
           "single": "heading1"
         }
       },
+      "homepagemetadescription": {
+        "type": "Text",
+        "config": {
+          "label": "Homepage Meta Description",
+          "placeholder": ""
+        }
+      },
+      "homepagemetaimage": {
+        "type": "Image",
+        "config": {
+          "label": "HomePageMetaImage",
+          "constraint": {
+            "width": 1200,
+            "height": 630
+          },
+          "thumbnails": []
+        }
+      },
+      "homepagetwitterimage": {
+        "type": "Image",
+        "config": {
+          "label": "HomePageTwitterImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -23,6 +49,9 @@
               "type": "SharedSlice"
             },
             "spotlight": {
+              "type": "SharedSlice"
+            },
+            "content": {
               "type": "SharedSlice"
             }
           }

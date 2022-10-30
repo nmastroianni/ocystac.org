@@ -1,5 +1,6 @@
 import Navbar from './Navbar'
-const Layout = ({ children, navigation }) => {
+import Footer from './Footer'
+const Layout = ({ children, navigation, sitelogo }) => {
   return (
     <div className="relative">
       <ul id="nav-access" className="relative mx-auto">
@@ -20,13 +21,13 @@ const Layout = ({ children, navigation }) => {
         <header>
           <Navbar
             {...navigation.data}
-            // logo={logo}
+            logo={sitelogo}
             // navigationlinks={navigationlinks}
             // sociallinks={sociallinks}
           />
         </header>
         <main id="main-content">{children}</main>
-        {/* <Footer /> */}
+        <Footer />
         {/* <Consent /> */}
       </div>
     </div>

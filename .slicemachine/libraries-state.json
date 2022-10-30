@@ -1,6 +1,85 @@
 {
   "slices": {
     "components": {
+      "content": {
+        "library": "slices",
+        "id": "content",
+        "name": "Content",
+        "description": "Content",
+        "model": {
+          "id": "content",
+          "type": "SharedSlice",
+          "name": "Content",
+          "description": "Content",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Content",
+              "primary": {
+                "content": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Content",
+                    "placeholder": "Write your page content here",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "content": [
+                {
+                  "type": "heading2",
+                  "text": "Origin",
+                  "spans": []
+                },
+                {
+                  "type": "image",
+                  "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+                  "alt": null,
+                  "copyright": null,
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  }
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Commodo ipsum ut commodo id consequat exercitation consequat laboris aute enim Lorem voluptate exercitation sit. Do proident ipsum pariatur. Quis magna qui et dolor exercitation commodo non ad anim non do id.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "content"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/Content/default/preview.png",
+            "width": 677,
+            "height": 560
+          }
+        }
+      },
       "hero": {
         "library": "slices",
         "id": "hero",

@@ -20,6 +20,39 @@ interface HomepageDocumentData {
      */
     title: prismicT.TitleField;
     /**
+     * Homepage Meta Description field in *Homepage*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.homepagemetadescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    homepagemetadescription: prismicT.KeyTextField;
+    /**
+     * HomePageMetaImage field in *Homepage*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.homepagemetaimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    homepagemetaimage: prismicT.ImageField<never>;
+    /**
+     * HomePageTwitterImage field in *Homepage*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.homepagetwitterimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    homepagetwitterimage: prismicT.ImageField<never>;
+    /**
      * Slice Zone field in *Homepage*
      *
      * - **Field Type**: Slice Zone
@@ -35,7 +68,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HeroSlice | SpotlightSlice;
+type HomepageDocumentDataSlicesSlice = HeroSlice | SpotlightSlice | ContentSlice;
 /**
  * Homepage document from Prismic
  *
@@ -132,7 +165,67 @@ interface PageDocumentData {
      *
      */
     title: prismicT.TitleField;
+    /**
+     * Metaimage field in *Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.metaimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    metaimage: prismicT.ImageField<never>;
+    /**
+     * TwitterImage field in *Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.twitterimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    twitterimage: prismicT.ImageField<never>;
+    /**
+     * MetaDescription field in *Page*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.metadescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    metadescription: prismicT.KeyTextField;
+    /**
+     * CanonicalUrl field in *Page*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.canonicalurl
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    canonicalurl: prismicT.KeyTextField;
+    /**
+     * Slice Zone field in *Page*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *Page → Slice Zone*
+ *
+ */
+type PageDocumentDataSlicesSlice = HeroSlice | SpotlightSlice | ContentSlice;
 /**
  * Page document from Prismic
  *
@@ -143,7 +236,114 @@ interface PageDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
-export type AllDocumentTypes = HomepageDocument | MainmenuDocument | PageDocument;
+/** Content for SiteMetadata documents */
+interface SitemetadataDocumentData {
+    /**
+     * SiteTitle field in *SiteMetadata*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sitemetadata.sitetitle
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    sitetitle: prismicT.KeyTextField;
+    /**
+     * SiteMetaDescription field in *SiteMetadata*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sitemetadata.sitemetadescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    sitemetadescription: prismicT.KeyTextField;
+    /**
+     * SiteMetaImage field in *SiteMetadata*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sitemetadata.sitemetaimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    sitemetaimage: prismicT.ImageField<never>;
+    /**
+     * SiteTwitterImage field in *SiteMetadata*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sitemetadata.sitetwitterimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    sitetwitterimage: prismicT.ImageField<never>;
+    /**
+     * SiteLogo field in *SiteMetadata*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sitemetadata.sitelogo
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    sitelogo: prismicT.ImageField<never>;
+}
+/**
+ * SiteMetadata document from Prismic
+ *
+ * - **API ID**: `sitemetadata`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SitemetadataDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SitemetadataDocumentData>, "sitemetadata", Lang>;
+export type AllDocumentTypes = HomepageDocument | MainmenuDocument | PageDocument | SitemetadataDocument;
+/**
+ * Primary content in Content → Primary
+ *
+ */
+interface ContentSliceDefaultPrimary {
+    /**
+     * Content field in *Content → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Write your page content here
+     * - **API ID Path**: content.primary.content
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+}
+/**
+ * Default variation for Content Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Content`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContentSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ContentSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Content*
+ *
+ */
+type ContentSliceVariation = ContentSliceDefault;
+/**
+ * Content Shared Slice
+ *
+ * - **API ID**: `content`
+ * - **Description**: `Content`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContentSlice = prismicT.SharedSlice<"content", ContentSliceVariation>;
 /**
  * Primary content in Hero → Primary
  *
@@ -827,6 +1027,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataSlicesSlice, MainmenuDocument, PageDocumentData, PageDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, MainMenuItemSliceDefaultPrimary, MainMenuItemSliceDefault, MainMenuItemSliceMainMenuItemWithDropdownPrimary, MainMenuItemSliceMainMenuItemWithDropdownItem, MainMenuItemSliceMainMenuItemWithDropdown, MainMenuItemSliceVariation, MainMenuItemSlice, SpotlightSliceDefaultPrimary, SpotlightSliceDefaultItem, SpotlightSliceDefault, SpotlightSlicePrimaryPrimary, SpotlightSlicePrimaryItem, SpotlightSlicePrimary, SpotlightSliceSecondaryPrimary, SpotlightSliceSecondaryItem, SpotlightSliceSecondary, SpotlightSliceAccentPrimary, SpotlightSliceAccentItem, SpotlightSliceAccent, SpotlightSliceVariation, SpotlightSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataSlicesSlice, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, MainMenuItemSliceDefaultPrimary, MainMenuItemSliceDefault, MainMenuItemSliceMainMenuItemWithDropdownPrimary, MainMenuItemSliceMainMenuItemWithDropdownItem, MainMenuItemSliceMainMenuItemWithDropdown, MainMenuItemSliceVariation, MainMenuItemSlice, SpotlightSliceDefaultPrimary, SpotlightSliceDefaultItem, SpotlightSliceDefault, SpotlightSlicePrimaryPrimary, SpotlightSlicePrimaryItem, SpotlightSlicePrimary, SpotlightSliceSecondaryPrimary, SpotlightSliceSecondaryItem, SpotlightSliceSecondary, SpotlightSliceAccentPrimary, SpotlightSliceAccentItem, SpotlightSliceAccent, SpotlightSliceVariation, SpotlightSlice };
     }
 }

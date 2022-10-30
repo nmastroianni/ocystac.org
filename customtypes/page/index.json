@@ -20,6 +20,53 @@
           "label": "uid",
           "placeholder": ""
         }
+      },
+      "metaimage": {
+        "type": "Image",
+        "config": {
+          "label": "Metaimage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "twitterimage": {
+        "type": "Image",
+        "config": {
+          "label": "TwitterImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "metadescription": {
+        "type": "Text",
+        "config": {
+          "label": "MetaDescription",
+          "placeholder": ""
+        }
+      },
+      "canonicalurl": {
+        "type": "Text",
+        "config": {
+          "label": "CanonicalUrl",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "spotlight": {
+              "type": "SharedSlice"
+            },
+            "content": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }
