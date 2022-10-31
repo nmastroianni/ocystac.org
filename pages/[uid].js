@@ -4,15 +4,14 @@ import Head from 'next/head'
 import { createClient } from '../prismicio'
 import { components } from '../slices'
 import Layout from '../components/Layout'
-import Icon from '../components/Icon'
 import EventCard from '../components/EventCard'
 
-const Page = ({ page, navigation, siteMetadata, events }) => {
+const Page = ({ page, navigation, siteMetadata, events, updated }) => {
   const templates = {
     heading1: ({ node, children }) => {
       return (
         <h1
-          className={`mb-6 text-center text-2xl font-bold text-secondary lg:self-start lg:text-left lg:text-3xl xl:text-4xl`}
+          className={`my-6 text-center text-2xl font-bold text-secondary lg:self-start lg:text-3xl xl:text-4xl`}
         >
           {children}
         </h1>
@@ -65,22 +64,28 @@ const Page = ({ page, navigation, siteMetadata, events }) => {
         />
       </Head>
       <div className="grid grid-cols-1 gap-y-4 md:gap-y-0">
-        <div className="prose mx-auto my-4 md:my-6 md:prose-lg lg:my-8 lg:prose-xl xl:my-10 xl:prose-2xl">
+        <div className="">
           <PrismicRichText field={page.data.title} components={templates} />
+          {page.url === '/calendar' && (
+            <p className="text-center text-sm">
+              {`Page Last Updated: ${updated.date} ${updated.time}`}
+            </p>
+          )}
         </div>
-        <section>
-          <ol>
-            {events !== 'loading' &&
-              events.length > 0 &&
-              events.map(event => {
-                return (
-                  <li key={event.id} className="mx-2">
-                    <EventCard {...event} />
-                  </li>
-                )
-              })}
-          </ol>
-        </section>
+        {events !== 'loading' && (
+          <section>
+            <ol>
+              {events.length > 0 &&
+                events.map(event => {
+                  return (
+                    <li key={event.id} className="mx-2">
+                      <EventCard {...event} />
+                    </li>
+                  )
+                })}
+            </ol>
+          </section>
+        )}
         {page.data.slices.length > 0 && (
           <SliceZone slices={page.data.slices} components={components} />
         )}
@@ -102,6 +107,15 @@ export async function getStaticProps({ params, previewData }) {
    * Check if page is Calendar page
    * Grab Calendar Data
    */
+  const updated = {
+    time: new Date().toLocaleTimeString(),
+    date: new Date().toLocaleDateString('en-US', {
+      weekday: 'short',
+      month: '2-digit',
+      day: 'numeric',
+      year: 'numeric',
+    }),
+  }
   let events = 'loading'
   if (params.uid === 'calendar') {
     events = await fetch(
@@ -122,8 +136,9 @@ export async function getStaticProps({ params, previewData }) {
       page,
       siteMetadata,
       events,
+      updated,
     },
-    revalidate: 60 * 15,
+    revalidate: 60 * 30,
   }
 }
 
