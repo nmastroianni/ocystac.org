@@ -108,7 +108,9 @@ export async function getStaticProps({ params, previewData }) {
    * Grab Calendar Data
    */
   const updated = {
-    time: new Date().toLocaleTimeString(),
+    time: new Date().toLocaleTimeString('en-US', {
+      timeZone: 'America/New_York',
+    }),
     date: new Date().toLocaleDateString('en-US', {
       weekday: 'short',
       month: '2-digit',

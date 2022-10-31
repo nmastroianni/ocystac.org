@@ -5,7 +5,7 @@ const EventCard = ({ summary, start, end, description, location }) => {
     description = description.replace(/<\/?html-blob>/g, '')
   }
   return (
-    <article className="my-4 mx-auto flex max-w-screen-sm flex-col  rounded-lg border">
+    <article className="my-4 mx-auto flex max-w-screen-sm flex-col rounded-lg border">
       <aside className="flex flex-col justify-center rounded-t-lg bg-secondary py-4 text-center text-xl text-base-100 md:text-2xl lg:text-3xl">
         {new Date(start.dateTime).toLocaleDateString('en-US', {
           month: 'long',
@@ -19,7 +19,7 @@ const EventCard = ({ summary, start, end, description, location }) => {
           {summary}
         </h2>
         {description && (
-          <div className="prose mx-auto">
+          <div className="prose mx-auto px-4">
             <span className="font-semibold text-secondary">
               Event Details:{' '}
             </span>
@@ -29,7 +29,7 @@ const EventCard = ({ summary, start, end, description, location }) => {
           </div>
         )}
         {location && (
-          <div className="prose mx-auto">
+          <div className="prose mx-auto px-4">
             <p>
               <span className="font-semibold text-secondary">Location: </span>{' '}
               <br />
