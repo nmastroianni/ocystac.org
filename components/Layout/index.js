@@ -1,6 +1,6 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
-const Layout = ({ children, navigation, sitelogo }) => {
+const Layout = ({ children, navigation, sitelogo, footertext }) => {
   const getLogo = (navdata, metadata) => {
     if (Object.keys(navdata.data.logo).length > 0) {
       return navdata.data.logo
@@ -30,12 +30,13 @@ const Layout = ({ children, navigation, sitelogo }) => {
           <Navbar
             {...navigation.data}
             logo={logo}
+            backgroundimage={navigation.data.backgroundimage}
             // navigationlinks={navigationlinks}
             // sociallinks={sociallinks}
           />
         </header>
         <main id="main-content">{children}</main>
-        <Footer />
+        <Footer copyright={footertext} />
         {/* <Consent /> */}
       </div>
     </div>

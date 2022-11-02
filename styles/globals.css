@@ -4,9 +4,6 @@
 
 .headroom-wrapper > div {
   @apply text-base-100;
-  background: linear-gradient(90deg, #1e3a8abb, #1e3a8af0, #1e3a8abb),
-    /* bottom, image */ url('/navbarbg.jpg') no-repeat center center / cover
-      scroll;
 }
 
 .background-radial-gradient {

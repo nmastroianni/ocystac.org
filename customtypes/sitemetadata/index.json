@@ -48,6 +48,13 @@
           "constraint": {},
           "thumbnails": []
         }
+      },
+      "footertext": {
+        "type": "Text",
+        "config": {
+          "label": "FooterText",
+          "placeholder": ""
+        }
       }
     }
   }

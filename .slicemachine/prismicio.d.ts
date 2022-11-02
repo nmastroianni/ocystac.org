@@ -126,6 +126,17 @@ interface MainmenuDocumentData {
      */
     largebuttonlink: prismicT.LinkField;
     /**
+     * BackgroundImage field in *MainMenu*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: mainmenu.backgroundimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    backgroundimage: prismicT.ImageField<never>;
+    /**
      * Slice Zone field in *MainMenu*
      *
      * - **Field Type**: Slice Zone
@@ -293,6 +304,17 @@ interface SitemetadataDocumentData {
      *
      */
     sitelogo: prismicT.ImageField<never>;
+    /**
+     * FooterText field in *SiteMetadata*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sitemetadata.footertext
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    footertext: prismicT.KeyTextField;
 }
 /**
  * SiteMetadata document from Prismic

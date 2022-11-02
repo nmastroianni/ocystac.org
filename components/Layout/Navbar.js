@@ -1,15 +1,28 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import Headroom from 'react-headroom'
-import { PrismicLink } from '@prismicio/react'
 import { components } from '../../slices'
 import { SliceZone } from '@prismicio/react'
 import { PrismicNextImage } from '@prismicio/next'
 import PrismicNextLink from '../PrismicNextLink'
 
-const Navbar = ({ largebuttonlink, largebuttontext, logo, slices }) => {
+const Navbar = ({
+  backgroundimage,
+  largebuttonlink,
+  largebuttontext,
+  logo,
+  slices,
+}) => {
   return (
-    <Headroom style={{ zIndex: '11' }}>
+    <Headroom
+      style={{
+        zIndex: '11',
+        background: `linear-gradient(90deg, #1e3a8add, #1e3a8af7, #1e3a8add) ${
+          backgroundimage.url
+            ? `, url(${backgroundimage.url}) no-repeat right bottom / cover scroll`
+            : `, linear-gradient(90deg, #22D3EE, #F97316)`
+        }`,
+      }}
+    >
       <div className="navbar px-4 md:px-6 lg:px-8 xl:px-10">
         <div className="navbar-start">
           <div className="dropdown">

@@ -6,7 +6,7 @@ const PrismicButtonLink = ({ link, type, text }) => {
       return (
         <PrismicNextLink
           field={link}
-          className={`btn-primary btn text-base-100 hover:bg-orange-600`}
+          className={`btn-primary btn text-neutral hover:bg-orange-600`}
         >
           {text}
         </PrismicNextLink>

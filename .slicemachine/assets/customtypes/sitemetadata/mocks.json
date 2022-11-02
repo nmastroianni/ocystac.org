@@ -11,8 +11,8 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "sitetitle": "something",
-    "sitemetadescription": "bottle",
+    "sitetitle": "battle",
+    "sitemetadescription": "instrument",
     "sitemetaimage": {
       "dimensions": {
         "width": 1200,
@@ -20,7 +20,7 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51"
+      "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6"
     },
     "sitetwitterimage": {
       "dimensions": {
@@ -29,7 +29,7 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
+      "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
     },
     "sitelogo": {
       "dimensions": {
@@ -38,7 +38,8 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f"
-    }
+      "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869"
+    },
+    "footertext": "town"
   }
 }

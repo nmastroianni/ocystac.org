@@ -74,8 +74,6 @@ export async function getStaticProps({ previewData }) {
       navigation,
       page,
       siteMetadata,
-      // footer,
     },
-    revalidate: 60 * 15,
   }
 }

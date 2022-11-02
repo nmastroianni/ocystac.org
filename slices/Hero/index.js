@@ -47,6 +47,7 @@ const Hero = ({ slice }) => (
             <PrismicNextImage
               field={slice.primary.image}
               className="w-full rounded-lg shadow-lg transition duration-300 ease-in-out lg:hover:shadow-accent"
+              priority="true"
             />
           </div>
         </div>
