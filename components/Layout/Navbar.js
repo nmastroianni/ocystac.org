@@ -101,7 +101,7 @@ const Navbar = ({
               {logo ? (
                 <PrismicNextImage field={logo} width={120} height={120} />
               ) : (
-                <SvgLogo className="h-[120px] w-[120px]" />
+                <SvgLogo className="h-[120px] w-[120px] rounded-full" />
               )}
               <span className="sr-only">Return to Homepage</span>
             </Link>
@@ -128,7 +128,7 @@ const Navbar = ({
               {logo ? (
                 <PrismicNextImage field={logo} width={120} height={120} />
               ) : (
-                <SvgLogo className="h-[80px] w-[80px]" />
+                <SvgLogo className="h-[80px] w-[80px] rounded-full" />
               )}
               <span className="sr-only">Return to Homepage</span>
             </Link>
