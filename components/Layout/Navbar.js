@@ -125,7 +125,12 @@ const Navbar = ({
           )}
           <div className="lg:hidden">
             <Link href="/">
-              <PrismicNextImage field={logo} width={120} height={120} />
+              {logo ? (
+                <PrismicNextImage field={logo} width={120} height={120} />
+              ) : (
+                <SvgLogo className="h-[80px] w-[80px]" />
+              )}
+              <span className="sr-only">Return to Homepage</span>
             </Link>
           </div>
         </div>
