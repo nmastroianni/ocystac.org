@@ -294,17 +294,6 @@ interface SitemetadataDocumentData {
      */
     sitetwitterimage: prismicT.ImageField<never>;
     /**
-     * SiteLogo field in *SiteMetadata*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: sitemetadata.sitelogo
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    sitelogo: prismicT.ImageField<never>;
-    /**
      * FooterText field in *SiteMetadata*
      *
      * - **Field Type**: Text

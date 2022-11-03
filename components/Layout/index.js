@@ -1,14 +1,14 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
-const Layout = ({ children, navigation, sitelogo, footertext }) => {
-  const getLogo = (navdata, metadata) => {
+const Layout = ({ children, navigation, footertext }) => {
+  const getLogo = navdata => {
     if (Object.keys(navdata.data.logo).length > 0) {
       return navdata.data.logo
     } else {
-      return metadata
+      return false
     }
   }
-  const logo = getLogo(navigation, sitelogo)
+  const logo = getLogo(navigation)
   return (
     <div className="relative">
       <ul id="nav-access" className="relative mx-auto">

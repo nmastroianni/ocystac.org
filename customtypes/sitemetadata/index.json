@@ -41,14 +41,6 @@
           "thumbnails": []
         }
       },
-      "sitelogo": {
-        "type": "Image",
-        "config": {
-          "label": "SiteLogo",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
       "footertext": {
         "type": "Text",
         "config": {

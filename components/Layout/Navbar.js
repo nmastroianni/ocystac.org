@@ -4,6 +4,7 @@ import { components } from '../../slices'
 import { SliceZone } from '@prismicio/react'
 import { PrismicNextImage } from '@prismicio/next'
 import PrismicNextLink from '../PrismicNextLink'
+import SvgLogo from '../SvgLogo'
 
 const Navbar = ({
   backgroundimage,
@@ -97,7 +98,11 @@ const Navbar = ({
           </div>
           <div className="hidden lg:inline-block">
             <Link href="/">
-              <PrismicNextImage field={logo} width={120} height={120} />
+              {logo ? (
+                <PrismicNextImage field={logo} width={120} height={120} />
+              ) : (
+                <SvgLogo className="h-[120px] w-[120px]" />
+              )}
               <span className="sr-only">Return to Homepage</span>
             </Link>
           </div>

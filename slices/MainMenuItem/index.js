@@ -11,7 +11,7 @@ const MainMenuItem = ({ slice }) => {
     case 'mainMenuItemWithDropdown':
       return (
         <li tabIndex={0}>
-          <a className="hover:bg-blue-800">
+          <span className="hover:bg-blue-800">
             {slice.primary.buttontext}
             <svg
               className="fill-current"
@@ -22,7 +22,7 @@ const MainMenuItem = ({ slice }) => {
             >
               <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
             </svg>
-          </a>
+          </span>
           <ul className="bg-primary p-2">
             {slice.items.length > 0 &&
               slice.items.map(item => (
