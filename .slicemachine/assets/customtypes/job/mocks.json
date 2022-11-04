@@ -14,17 +14,37 @@
     "title": [
       {
         "type": "heading1",
-        "text": "Member",
+        "text": "Score",
         "spans": []
       }
     ],
     "description": [
       {
         "type": "paragraph",
-        "text": "Officia tempor ipsum ullamco mollit sunt qui.",
+        "text": "Aute elit duis enim incididunt non culpa nulla eu velit consequat et. Mollit enim aute ut veniam sit duis laboris. Quis minim aute aliquip magna aliqua incididunt esse ut dolor nulla aliquip eiusmod veniam.",
         "spans": []
       }
     ],
+    "metaimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f"
+    },
+    "twitterimage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a"
+    },
+    "metadescription": "model",
+    "canonicalurl": "impossible",
     "slices": []
   }
 }

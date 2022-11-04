@@ -53,7 +53,7 @@ const Content = ({ slice }) => {
     },
   }
   return (
-    <section className="prose prose-gray mx-auto flex flex-col items-center px-3 py-4 md:px-6 md:py-6 md:prose-lg lg:py-8 lg:prose-xl xl:py-10 xl:prose-2xl">
+    <section className="prose prose-gray mx-auto px-3 py-4 md:px-6 md:py-6 md:prose-lg lg:py-8 lg:prose-xl xl:py-10 xl:prose-2xl">
       <PrismicRichText field={slice.primary.content} components={templates} />
     </section>
   )

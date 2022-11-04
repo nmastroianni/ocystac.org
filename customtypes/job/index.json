@@ -30,6 +30,36 @@
           "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
         }
       },
+      "metaimage": {
+        "type": "Image",
+        "config": {
+          "label": "MetaImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "twitterimage": {
+        "type": "Image",
+        "config": {
+          "label": "TwitterImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "metadescription": {
+        "type": "Text",
+        "config": {
+          "label": "MetaDescription",
+          "placeholder": ""
+        }
+      },
+      "canonicalurl": {
+        "type": "Text",
+        "config": {
+          "label": "CanonicalUrl",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

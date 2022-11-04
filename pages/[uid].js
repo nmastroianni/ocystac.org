@@ -18,7 +18,6 @@ const Page = ({ page, navigation, siteMetadata, events, updated, jobs }) => {
       )
     },
   }
-  console.log('[uid].js says: ', jobs)
   return (
     <Layout
       className="bg-primary"

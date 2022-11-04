@@ -11,7 +11,6 @@ import Link from 'next/link'
  */
 const JobList = ({ slice }) => {
   const { id, items, variation } = slice
-  console.log('JobList says ---> ', slice)
   const templates = {
     paragraph: ({ children }) => <p className="text-lg">{children}</p>,
   }
@@ -51,7 +50,11 @@ const JobList = ({ slice }) => {
                       href={joblink.url}
                       className="btn-secondary btn text-base-100"
                     >
-                      Learn About This Job
+                      <p>
+                        {' '}
+                        Learn about the <br />
+                        {`${prismicH.asText(joblink.data.title)} position`}
+                      </p>
                     </Link>
                   </div>
                 </div>

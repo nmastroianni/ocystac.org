@@ -19,11 +19,7 @@ const Job = ({ page, navigation, siteMetadata, events, updated }) => {
   }
 
   return (
-    <Layout
-      className="bg-primary"
-      navigation={navigation}
-      {...siteMetadata.data}
-    >
+    <Layout navigation={navigation} {...siteMetadata.data}>
       <Head>
         <title>{`${prismicH.asText(page.data.title)} · ${
           siteMetadata.data.sitetitle
