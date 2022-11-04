@@ -16,8 +16,8 @@ const JobList = ({ slice }) => {
     paragraph: ({ children }) => <p className="text-lg">{children}</p>,
   }
   return (
-    <section className="">
-      <div className="mx-auto max-w-screen-sm px-4">
+    <section className="my-4 md:my-6 lg:my-8 xl:my-10">
+      <div className="mx-auto grid max-w-screen-sm gap-y-6 divide-y px-4 md:gap-y-8 lg:gap-y-10">
         {items.length > 0 &&
           items.map(item => {
             const { jobimage, joblink } = item

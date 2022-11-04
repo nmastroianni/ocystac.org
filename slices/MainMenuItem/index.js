@@ -43,7 +43,7 @@ const MainMenuItem = ({ slice }) => {
         <li>
           <PrismicNextLink
             field={slice.primary.linktarget}
-            className="hover:bg-blue-800"
+            className="hover:bg-neutral focus:bg-neutral  "
           >
             {slice.primary.linktext}
           </PrismicNextLink>
