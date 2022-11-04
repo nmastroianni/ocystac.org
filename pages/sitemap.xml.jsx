@@ -5,7 +5,7 @@ import { createClient } from '../prismicio'
 const SitemapIndex = () => null
 
 const Sitemap = ({ pages }) => {
-  const origin = 'https://gomc3.org'
+  const origin = 'https://www.ocystac.org'
   return (
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       {pages?.map((page, index) => {
