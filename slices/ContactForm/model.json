@@ -1,0 +1,76 @@
+{
+  "id": "contact_form",
+  "type": "SharedSlice",
+  "name": "ContactForm",
+  "description": "ContactForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "ContactForm",
+      "primary": {
+        "namequestion": {
+          "type": "Text",
+          "config": {
+            "label": "NameQuestion",
+            "placeholder": "How to ask for their name"
+          }
+        },
+        "nameplaceholder": {
+          "type": "Text",
+          "config": {
+            "label": "NamePlaceholder",
+            "placeholder": "What is shown in name field"
+          }
+        },
+        "emailquestion": {
+          "type": "Text",
+          "config": {
+            "label": "EmailQuestion",
+            "placeholder": "How to ask for their email"
+          }
+        },
+        "emailplaceholder": {
+          "type": "Text",
+          "config": {
+            "label": "EmailPlaceholder",
+            "placeholder": "What is shown in the email field"
+          }
+        },
+        "selectquestion": {
+          "type": "Text",
+          "config": {
+            "label": "SelectQuestion",
+            "placeholder": ""
+          }
+        },
+        "commentquestion": {
+          "type": "Text",
+          "config": {
+            "label": "CommentQuestion",
+            "placeholder": "How to ask for their comment"
+          }
+        },
+        "commentplaceholder": {
+          "type": "Text",
+          "config": {
+            "label": "CommentPlaceholder",
+            "placeholder": "What is shown in comment field"
+          }
+        }
+      },
+      "items": {
+        "contactreason": {
+          "type": "Text",
+          "config": {
+            "label": "ContactReason",
+            "placeholder": ""
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

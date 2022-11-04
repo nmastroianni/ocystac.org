@@ -18,6 +18,10 @@ const routes = [
     type: 'page',
     path: '/:uid',
   },
+  {
+    type: 'job',
+    path: '/jobs/:uid',
+  },
 ]
 
 /**

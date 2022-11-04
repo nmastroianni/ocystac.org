@@ -1,0 +1,38 @@
+{
+  "id": "job_list",
+  "type": "SharedSlice",
+  "name": "JobList",
+  "description": "JobList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "JobList",
+      "primary": {},
+      "items": {
+        "joblink": {
+          "type": "Link",
+          "config": {
+            "label": "JobLink",
+            "select": "document",
+            "customtypes": ["job"]
+          }
+        },
+        "jobimage": {
+          "type": "Image",
+          "config": {
+            "label": "JobImage",
+            "constraint": {
+              "width": 640,
+              "height": 200
+            },
+            "thumbnails": []
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

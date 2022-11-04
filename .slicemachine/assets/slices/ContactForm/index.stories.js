@@ -1,0 +1,9 @@
+import MyComponent from '../../../../slices/ContactForm';
+
+export default {
+  title: 'slices/ContactForm'
+}
+
+
+export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{"contactreason":"there"}],"primary":{"namequestion":"What is your name?","nameplaceholder":"Enter your name here...","emailquestion":"What is your email address?","emailplaceholder":"Enter your email address here...","selectquestion":"off","commentquestion":"How can we help you?","commentplaceholder":"Enter your comment or question here..."},"slice_type":"contact_form","id":"_Default"}} />
+_Default.storyName = ''

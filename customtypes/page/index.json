@@ -67,6 +67,12 @@
             },
             "frequently_asked_questions": {
               "type": "SharedSlice"
+            },
+            "contact_form": {
+              "type": "SharedSlice"
+            },
+            "job_list": {
+              "type": "SharedSlice"
             }
           }
         }

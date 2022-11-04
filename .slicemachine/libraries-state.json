@@ -1,6 +1,120 @@
 {
   "slices": {
     "components": {
+      "contact_form": {
+        "library": "slices",
+        "id": "contact_form",
+        "name": "ContactForm",
+        "description": "ContactForm",
+        "model": {
+          "id": "contact_form",
+          "type": "SharedSlice",
+          "name": "ContactForm",
+          "description": "ContactForm",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ContactForm",
+              "primary": {
+                "namequestion": {
+                  "type": "Text",
+                  "config": {
+                    "label": "NameQuestion",
+                    "placeholder": "How to ask for their name"
+                  }
+                },
+                "nameplaceholder": {
+                  "type": "Text",
+                  "config": {
+                    "label": "NamePlaceholder",
+                    "placeholder": "What is shown in name field"
+                  }
+                },
+                "emailquestion": {
+                  "type": "Text",
+                  "config": {
+                    "label": "EmailQuestion",
+                    "placeholder": "How to ask for their email"
+                  }
+                },
+                "emailplaceholder": {
+                  "type": "Text",
+                  "config": {
+                    "label": "EmailPlaceholder",
+                    "placeholder": "What is shown in the email field"
+                  }
+                },
+                "selectquestion": {
+                  "type": "Text",
+                  "config": {
+                    "label": "SelectQuestion",
+                    "placeholder": ""
+                  }
+                },
+                "commentquestion": {
+                  "type": "Text",
+                  "config": {
+                    "label": "CommentQuestion",
+                    "placeholder": "How to ask for their comment"
+                  }
+                },
+                "commentplaceholder": {
+                  "type": "Text",
+                  "config": {
+                    "label": "CommentPlaceholder",
+                    "placeholder": "What is shown in comment field"
+                  }
+                }
+              },
+              "items": {
+                "contactreason": {
+                  "type": "Text",
+                  "config": {
+                    "label": "ContactReason",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "contactreason": "there"
+              }
+            ],
+            "primary": {
+              "namequestion": "What is your name?",
+              "nameplaceholder": "Enter your name here...",
+              "emailquestion": "What is your email address?",
+              "emailplaceholder": "Enter your email address here...",
+              "selectquestion": "off",
+              "commentquestion": "How can we help you?",
+              "commentplaceholder": "Enter your comment or question here..."
+            },
+            "slice_type": "contact_form"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/ContactForm/default/preview.png",
+            "width": 689,
+            "height": 592
+          }
+        }
+      },
       "content": {
         "library": "slices",
         "id": "content",
@@ -326,6 +440,88 @@
             "height": 729
           }
         }
+      },
+      "job_list": {
+        "library": "slices",
+        "id": "job_list",
+        "name": "JobList",
+        "description": "JobList",
+        "model": {
+          "id": "job_list",
+          "type": "SharedSlice",
+          "name": "JobList",
+          "description": "JobList",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "JobList",
+              "primary": {},
+              "items": {
+                "joblink": {
+                  "type": "Link",
+                  "config": {
+                    "label": "JobLink",
+                    "select": "document",
+                    "customtypes": [
+                      "job"
+                    ]
+                  }
+                },
+                "jobimage": {
+                  "type": "Image",
+                  "config": {
+                    "label": "JobImage",
+                    "constraint": {
+                      "width": 640,
+                      "height": 200
+                    },
+                    "thumbnails": []
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "joblink": {
+                  "id": "mock_document_id",
+                  "link_type": "Document",
+                  "type": "job",
+                  "tags": [],
+                  "lang": "en-us",
+                  "slug": null,
+                  "first_publication_date": "1970-01-01T00:00:01+0000",
+                  "last_publication_date": "1970-01-01T01:00:00+0000"
+                },
+                "jobimage": {
+                  "dimensions": {
+                    "width": 400,
+                    "height": 400
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482"
+                }
+              }
+            ],
+            "primary": {},
+            "slice_type": "job_list"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
       },
       "main_menu_item": {
         "library": "slices",

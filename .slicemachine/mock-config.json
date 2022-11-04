@@ -20,7 +20,21 @@
       }
     },
     "mainmenu": {},
-    "sitemetadata": {}
+    "sitemetadata": {},
+    "job": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices": {
     "MainMenuItem": {
@@ -154,6 +168,36 @@
             "content": "What can I do to help at a swim meet?"
           }
         }
+      }
+    },
+    "ContactForm": {
+      "default": {
+        "primary": {
+          "namequestion": {
+            "content": "What is your name?"
+          },
+          "nameplaceholder": {
+            "content": "Enter your name here..."
+          },
+          "emailquestion": {
+            "content": "What is your email address?"
+          },
+          "emailplaceholder": {
+            "content": "Enter your email address here..."
+          },
+          "commentquestion": {
+            "content": "How can we help you?"
+          },
+          "commentplaceholder": {
+            "content": "Enter your comment or question here..."
+          }
+        }
+      }
+    },
+    "JobList": {
+      "default": {
+        "primary": {},
+        "items": {}
       }
     }
   }

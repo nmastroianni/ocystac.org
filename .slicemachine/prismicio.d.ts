@@ -79,6 +79,57 @@ type HomepageDocumentDataSlicesSlice = HeroSlice | SpotlightSlice | ContentSlice
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
+/** Content for Job documents */
+interface JobDocumentData {
+    /**
+     * Title field in *Job*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Enter job title
+     * - **API ID Path**: job.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *Job*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: job.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Slice Zone field in *Job*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: job.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<JobDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Job → Slice Zone*
+ *
+ */
+type JobDocumentDataSlicesSlice = ContentSlice | FrequentlyAskedQuestionsSlice;
+/**
+ * Job document from Prismic
+ *
+ * - **API ID**: `job`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type JobDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<JobDocumentData>, "job", Lang>;
 /** Content for MainMenu documents */
 interface MainmenuDocumentData {
     /**
@@ -236,7 +287,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeroSlice | SpotlightSlice | ContentSlice | FrequentlyAskedQuestionsSlice;
+type PageDocumentDataSlicesSlice = HeroSlice | SpotlightSlice | ContentSlice | FrequentlyAskedQuestionsSlice | ContactFormSlice | JobListSlice;
 /**
  * Page document from Prismic
  *
@@ -315,7 +366,122 @@ interface SitemetadataDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SitemetadataDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SitemetadataDocumentData>, "sitemetadata", Lang>;
-export type AllDocumentTypes = HomepageDocument | MainmenuDocument | PageDocument | SitemetadataDocument;
+export type AllDocumentTypes = HomepageDocument | JobDocument | MainmenuDocument | PageDocument | SitemetadataDocument;
+/**
+ * Primary content in ContactForm → Primary
+ *
+ */
+interface ContactFormSliceDefaultPrimary {
+    /**
+     * NameQuestion field in *ContactForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: How to ask for their name
+     * - **API ID Path**: contact_form.primary.namequestion
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    namequestion: prismicT.KeyTextField;
+    /**
+     * NamePlaceholder field in *ContactForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: What is shown in name field
+     * - **API ID Path**: contact_form.primary.nameplaceholder
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    nameplaceholder: prismicT.KeyTextField;
+    /**
+     * EmailQuestion field in *ContactForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: How to ask for their email
+     * - **API ID Path**: contact_form.primary.emailquestion
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    emailquestion: prismicT.KeyTextField;
+    /**
+     * EmailPlaceholder field in *ContactForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: What is shown in the email field
+     * - **API ID Path**: contact_form.primary.emailplaceholder
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    emailplaceholder: prismicT.KeyTextField;
+    /**
+     * SelectQuestion field in *ContactForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact_form.primary.selectquestion
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    selectquestion: prismicT.KeyTextField;
+    /**
+     * CommentQuestion field in *ContactForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: How to ask for their comment
+     * - **API ID Path**: contact_form.primary.commentquestion
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    commentquestion: prismicT.KeyTextField;
+    /**
+     * CommentPlaceholder field in *ContactForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: What is shown in comment field
+     * - **API ID Path**: contact_form.primary.commentplaceholder
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    commentplaceholder: prismicT.KeyTextField;
+}
+/**
+ * Item in ContactForm → Items
+ *
+ */
+export interface ContactFormSliceDefaultItem {
+    /**
+     * ContactReason field in *ContactForm → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact_form.items[].contactreason
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    contactreason: prismicT.KeyTextField;
+}
+/**
+ * Default variation for ContactForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ContactForm`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContactFormSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ContactFormSliceDefaultPrimary>, Simplify<ContactFormSliceDefaultItem>>;
+/**
+ * Slice variation for *ContactForm*
+ *
+ */
+type ContactFormSliceVariation = ContactFormSliceDefault;
+/**
+ * ContactForm Shared Slice
+ *
+ * - **API ID**: `contact_form`
+ * - **Description**: `ContactForm`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContactFormSlice = prismicT.SharedSlice<"contact_form", ContactFormSliceVariation>;
 /**
  * Primary content in Content → Primary
  *
@@ -546,6 +712,55 @@ type HeroSliceVariation = HeroSliceDefault;
  *
  */
 export type HeroSlice = prismicT.SharedSlice<"hero", HeroSliceVariation>;
+/**
+ * Item in JobList → Items
+ *
+ */
+export interface JobListSliceDefaultItem {
+    /**
+     * JobLink field in *JobList → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: job_list.items[].joblink
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    joblink: prismicT.RelationField<"job">;
+    /**
+     * JobImage field in *JobList → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: job_list.items[].jobimage
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    jobimage: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for JobList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `JobList`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type JobListSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<JobListSliceDefaultItem>>;
+/**
+ * Slice variation for *JobList*
+ *
+ */
+type JobListSliceVariation = JobListSliceDefault;
+/**
+ * JobList Shared Slice
+ *
+ * - **API ID**: `job_list`
+ * - **Description**: `JobList`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type JobListSlice = prismicT.SharedSlice<"job_list", JobListSliceVariation>;
 /**
  * Primary content in MainMenuItem → Primary
  *
@@ -1113,6 +1328,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MainmenuDocumentData, MainmenuDocumentDataSlicesSlice, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, FrequentlyAskedQuestionsSliceDefaultPrimary, FrequentlyAskedQuestionsSliceDefaultItem, FrequentlyAskedQuestionsSliceDefault, FrequentlyAskedQuestionsSliceVariation, FrequentlyAskedQuestionsSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, MainMenuItemSliceDefaultPrimary, MainMenuItemSliceDefault, MainMenuItemSliceMainMenuItemWithDropdownPrimary, MainMenuItemSliceMainMenuItemWithDropdownItem, MainMenuItemSliceMainMenuItemWithDropdown, MainMenuItemSliceVariation, MainMenuItemSlice, SpotlightSliceDefaultPrimary, SpotlightSliceDefaultItem, SpotlightSliceDefault, SpotlightSlicePrimaryPrimary, SpotlightSlicePrimaryItem, SpotlightSlicePrimary, SpotlightSliceSecondaryPrimary, SpotlightSliceSecondaryItem, SpotlightSliceSecondary, SpotlightSliceAccentPrimary, SpotlightSliceAccentItem, SpotlightSliceAccent, SpotlightSliceVariation, SpotlightSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, JobDocumentData, JobDocumentDataSlicesSlice, JobDocument, MainmenuDocumentData, MainmenuDocumentDataSlicesSlice, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ContactFormSliceDefaultPrimary, ContactFormSliceDefaultItem, ContactFormSliceDefault, ContactFormSliceVariation, ContactFormSlice, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, FrequentlyAskedQuestionsSliceDefaultPrimary, FrequentlyAskedQuestionsSliceDefaultItem, FrequentlyAskedQuestionsSliceDefault, FrequentlyAskedQuestionsSliceVariation, FrequentlyAskedQuestionsSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, JobListSliceDefaultItem, JobListSliceDefault, JobListSliceVariation, JobListSlice, MainMenuItemSliceDefaultPrimary, MainMenuItemSliceDefault, MainMenuItemSliceMainMenuItemWithDropdownPrimary, MainMenuItemSliceMainMenuItemWithDropdownItem, MainMenuItemSliceMainMenuItemWithDropdown, MainMenuItemSliceVariation, MainMenuItemSlice, SpotlightSliceDefaultPrimary, SpotlightSliceDefaultItem, SpotlightSliceDefault, SpotlightSlicePrimaryPrimary, SpotlightSlicePrimaryItem, SpotlightSlicePrimary, SpotlightSliceSecondaryPrimary, SpotlightSliceSecondaryItem, SpotlightSliceSecondary, SpotlightSliceAccentPrimary, SpotlightSliceAccentItem, SpotlightSliceAccent, SpotlightSliceVariation, SpotlightSlice };
     }
 }
