@@ -1,12 +1,11 @@
 import { SliceZone, PrismicRichText } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
 import Head from 'next/head'
-import { createClient } from '../prismicio'
-import { components } from '../slices'
-import Layout from '../components/Layout'
-import EventCard from '../components/EventCard'
+import { createClient } from '../../prismicio'
+import { components } from '../../slices'
+import Layout from '../../components/Layout'
 
-const Page = ({ page, navigation, siteMetadata, events, updated }) => {
+const Committee = ({ page, navigation, siteMetadata }) => {
   const templates = {
     heading1: ({ node, children }) => {
       return (
@@ -65,26 +64,7 @@ const Page = ({ page, navigation, siteMetadata, events, updated }) => {
       <div className="grid grid-cols-1 gap-y-4 md:gap-y-0">
         <div className="">
           <PrismicRichText field={page.data.title} components={templates} />
-          {page.url === '/calendar' && (
-            <p className="text-center text-sm">
-              {`Page Last Updated: ${updated.date} ${updated.time}`}
-            </p>
-          )}
         </div>
-        {events !== 'loading' && (
-          <section>
-            <ol>
-              {events.length > 0 &&
-                events.map(event => {
-                  return (
-                    <li key={event.id} className="mx-2">
-                      <EventCard {...event} />
-                    </li>
-                  )
-                })}
-            </ol>
-          </section>
-        )}
         {page.data.slices.length > 0 && (
           <SliceZone slices={page.data.slices} components={components} />
         )}
@@ -93,60 +73,26 @@ const Page = ({ page, navigation, siteMetadata, events, updated }) => {
   )
 }
 
-export default Page
+export default Committee
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData })
   const siteMetadata = await client.getSingle('sitemetadata')
-  const page = await client.getByUID('page', params.uid, {
-    fetchLinks: ['job.description', 'job.title'],
-  })
+  const page = await client.getByUID('committee', params.uid)
 
   const navigation = await client.getSingle('mainmenu')
-
-  /**
-   * Check if page is Calendar page
-   * Grab Calendar Data
-   */
-  const updated = {
-    time: new Date().toLocaleTimeString('en-US', {
-      timeZone: 'America/New_York',
-    }),
-    date: new Date().toLocaleDateString('en-US', {
-      weekday: 'short',
-      month: '2-digit',
-      day: 'numeric',
-      year: 'numeric',
-    }),
-  }
-  let events = 'loading'
-  if (params.uid === 'calendar') {
-    events = await fetch(
-      `https://content.googleapis.com/calendar/v3/calendars/${process.env.CALENDAR_ID}/events?key=${process.env.CALENDAR_API_KEY}&singleEvents=true&orderBy=startTime`
-    )
-      .then(response => response.json())
-      .then(res => {
-        const currentEvents = res.items.filter(
-          item => new Date(item.end.dateTime) > new Date().setHours(0, 0, 0, 0)
-        )
-        return currentEvents
-      })
-  }
 
   return {
     props: {
       navigation,
       page,
       siteMetadata,
-      events,
-      updated,
     },
-    revalidate: 60 * 30,
   }
 }
 
 export async function getStaticPaths() {
   const client = createClient()
-  const pages = await client.getAllByType('page')
+  const pages = await client.getAllByType('committee')
   return {
     paths: pages.map(page => prismicH.asLink(page)),
     fallback: false,

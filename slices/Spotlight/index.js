@@ -1,7 +1,7 @@
 import React from 'react'
-import Image from 'next/image'
 import Icon from '../../components/Icon'
-import { PrismicLink, PrismicRichText } from '@prismicio/react'
+import { PrismicRichText } from '@prismicio/react'
+import PrismicNextLink from '../../components/PrismicNextLink'
 import { PrismicNextImage } from '@prismicio/next'
 
 /**
@@ -22,7 +22,6 @@ const Spotlight = ({ slice }) => {
     },
     variation,
   } = slice
-
   const templates = {
     heading2: ({ node, children }) => {
       return (
@@ -84,7 +83,7 @@ const Spotlight = ({ slice }) => {
     },
     hyperlink: ({ node, children }) => {
       return (
-        <PrismicLink
+        <PrismicNextLink
           field={node.data}
           className={` ${
             variation === 'primary'
@@ -97,7 +96,7 @@ const Spotlight = ({ slice }) => {
           } `}
         >
           {children}
-        </PrismicLink>
+        </PrismicNextLink>
       )
     },
     strong: ({ node, children }) => (
@@ -192,24 +191,28 @@ const Spotlight = ({ slice }) => {
               <div className="mx-auto my-6 flex flex-col flex-wrap space-y-4 md:flex-row md:justify-evenly md:space-y-0 xl:justify-evenly">
                 {items.length > 0 &&
                   items.map(item => {
-                    return (
-                      <p
-                        key={item.itemtext}
-                        className={`tooltip flex items-center md:mx-0 md:mb-2 lg:mb-0 ${
-                          variation === 'primary'
-                            ? `text-base-100`
-                            : variation === 'secondary'
-                            ? `text-base-100`
-                            : variation === 'accent'
-                            ? `text-gray-800`
-                            : `text-base-100`
-                        }`}
-                        data-tip={item.itemtooltip}
-                      >
-                        <Icon name={item.icon} className="mr-2 h-4 w-4" />
-                        {item.itemtext}
-                      </p>
-                    )
+                    if (item.icon) {
+                      return (
+                        <p
+                          key={item.itemtext}
+                          className={`tooltip flex items-center md:mx-0 md:mb-2 lg:mb-0 ${
+                            variation === 'primary'
+                              ? `text-base-100`
+                              : variation === 'secondary'
+                              ? `text-base-100`
+                              : variation === 'accent'
+                              ? `text-gray-800`
+                              : `text-base-100`
+                          }`}
+                          data-tip={item.itemtooltip}
+                        >
+                          <Icon name={item.icon} className="mr-2 h-4 w-4" />
+                          {item.itemtext}
+                        </p>
+                      )
+                    } else {
+                      return null
+                    }
                   })}
               </div>
               <div className={`text-base-100`}>

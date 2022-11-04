@@ -6,6 +6,90 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Committee documents */
+interface CommitteeDocumentData {
+    /**
+     * Title field in *Committee*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Enter committee title here...
+     * - **API ID Path**: committee.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * MetaImage field in *Committee*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: committee.metaimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    metaimage: prismicT.ImageField<never>;
+    /**
+     * TwitterImage field in *Committee*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: committee.twitterimage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    twitterimage: prismicT.ImageField<never>;
+    /**
+     * MetaDescription field in *Committee*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: committee.metadescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    metadescription: prismicT.KeyTextField;
+    /**
+     * CanonicalUrl field in *Committee*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: committee.canonicalurl
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    canonicalurl: prismicT.KeyTextField;
+    /**
+     * Slice Zone field in *Committee*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: committee.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<CommitteeDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Committee → Slice Zone*
+ *
+ */
+type CommitteeDocumentDataSlicesSlice = JobListSlice | FrequentlyAskedQuestionsSlice | ContentSlice | ContactFormSlice;
+/**
+ * Committee document from Prismic
+ *
+ * - **API ID**: `committee`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CommitteeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CommitteeDocumentData>, "committee", Lang>;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
     /**
@@ -410,7 +494,7 @@ interface SitemetadataDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SitemetadataDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SitemetadataDocumentData>, "sitemetadata", Lang>;
-export type AllDocumentTypes = HomepageDocument | JobDocument | MainmenuDocument | PageDocument | SitemetadataDocument;
+export type AllDocumentTypes = CommitteeDocument | HomepageDocument | JobDocument | MainmenuDocument | PageDocument | SitemetadataDocument;
 /**
  * Primary content in ContactForm → Primary
  *
@@ -1372,6 +1456,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, JobDocumentData, JobDocumentDataSlicesSlice, JobDocument, MainmenuDocumentData, MainmenuDocumentDataSlicesSlice, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ContactFormSliceDefaultPrimary, ContactFormSliceDefaultItem, ContactFormSliceDefault, ContactFormSliceVariation, ContactFormSlice, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, FrequentlyAskedQuestionsSliceDefaultPrimary, FrequentlyAskedQuestionsSliceDefaultItem, FrequentlyAskedQuestionsSliceDefault, FrequentlyAskedQuestionsSliceVariation, FrequentlyAskedQuestionsSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, JobListSliceDefaultItem, JobListSliceDefault, JobListSliceVariation, JobListSlice, MainMenuItemSliceDefaultPrimary, MainMenuItemSliceDefault, MainMenuItemSliceMainMenuItemWithDropdownPrimary, MainMenuItemSliceMainMenuItemWithDropdownItem, MainMenuItemSliceMainMenuItemWithDropdown, MainMenuItemSliceVariation, MainMenuItemSlice, SpotlightSliceDefaultPrimary, SpotlightSliceDefaultItem, SpotlightSliceDefault, SpotlightSlicePrimaryPrimary, SpotlightSlicePrimaryItem, SpotlightSlicePrimary, SpotlightSliceSecondaryPrimary, SpotlightSliceSecondaryItem, SpotlightSliceSecondary, SpotlightSliceAccentPrimary, SpotlightSliceAccentItem, SpotlightSliceAccent, SpotlightSliceVariation, SpotlightSlice };
+        export type { CommitteeDocumentData, CommitteeDocumentDataSlicesSlice, CommitteeDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, JobDocumentData, JobDocumentDataSlicesSlice, JobDocument, MainmenuDocumentData, MainmenuDocumentDataSlicesSlice, MainmenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ContactFormSliceDefaultPrimary, ContactFormSliceDefaultItem, ContactFormSliceDefault, ContactFormSliceVariation, ContactFormSlice, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, FrequentlyAskedQuestionsSliceDefaultPrimary, FrequentlyAskedQuestionsSliceDefaultItem, FrequentlyAskedQuestionsSliceDefault, FrequentlyAskedQuestionsSliceVariation, FrequentlyAskedQuestionsSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice, JobListSliceDefaultItem, JobListSliceDefault, JobListSliceVariation, JobListSlice, MainMenuItemSliceDefaultPrimary, MainMenuItemSliceDefault, MainMenuItemSliceMainMenuItemWithDropdownPrimary, MainMenuItemSliceMainMenuItemWithDropdownItem, MainMenuItemSliceMainMenuItemWithDropdown, MainMenuItemSliceVariation, MainMenuItemSlice, SpotlightSliceDefaultPrimary, SpotlightSliceDefaultItem, SpotlightSliceDefault, SpotlightSlicePrimaryPrimary, SpotlightSlicePrimaryItem, SpotlightSlicePrimary, SpotlightSliceSecondaryPrimary, SpotlightSliceSecondaryItem, SpotlightSliceSecondary, SpotlightSliceAccentPrimary, SpotlightSliceAccentItem, SpotlightSliceAccent, SpotlightSliceVariation, SpotlightSlice };
     }
 }

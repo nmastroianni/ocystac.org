@@ -82,16 +82,18 @@ const ContactForm = ({ slice }) => {
         </label>
         <select
           name={`group_${id || version}`}
-          defaultValue=""
+          defaultValue={items.length > 1 ? `` : items[0].contactreason}
           {...register(`group_${id || version}`, {
             required: 'A group is required.',
             pattern: '/^((?!Select).)*$/',
           })}
           className="max-w-s input-bordered input-secondary select w-full self-end"
         >
-          <option disabled value="">
-            Select the group you wish to contact
-          </option>
+          {items.length > 1 && (
+            <option disabled value="">
+              Select the group you wish to contact
+            </option>
+          )}
           {items.map((group, i) => (
             <option key={group.contactreason + id} value={group.contactreason}>
               {group.contactreason}

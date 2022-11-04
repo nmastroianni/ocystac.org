@@ -22,6 +22,10 @@ const routes = [
     type: 'job',
     path: '/jobs/:uid',
   },
+  {
+    type: 'committee',
+    path: '/committees/:uid',
+  },
 ]
 
 /**

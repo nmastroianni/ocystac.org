@@ -34,6 +34,14 @@
           "blocks": 1
         }
       }
+    },
+    "committee": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
     }
   },
   "slices": {

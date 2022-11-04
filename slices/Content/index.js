@@ -32,7 +32,7 @@ const Content = ({ slice }) => {
     image: ({ node, children }) => {
       return (
         <div
-          className="not-prose tooltip tooltip-accent my-4"
+          className="not-prose tooltip tooltip-accent my-4 flex justify-center"
           data-tip={node.alt}
         >
           <a href={node.url} target="_blank" rel="noreferrer">

@@ -521,7 +521,13 @@
           "fileName": "index",
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "/home/nmastroianni/linuxDev/next/ocystac.org/slices/JobList/default/preview.png",
+            "width": 712,
+            "height": 826
+          }
+        }
       },
       "main_menu_item": {
         "library": "slices",
