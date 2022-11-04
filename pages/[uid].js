@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { SliceZone, PrismicRichText } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
 import Head from 'next/head'
