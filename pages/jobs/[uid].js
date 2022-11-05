@@ -7,7 +7,6 @@ import { components } from '../../slices'
 import Layout from '../../components/Layout'
 
 const Job = ({ page, navigation, siteMetadata, events, updated }) => {
-  console.log('Job says ---> ', process.env.RECAPTCHA_SITE_KEY)
   let sliceTypes = []
   page.data.slices.forEach(slice => sliceTypes.push(slice.slice_type))
   const formOnPage = sliceTypes.indexOf('contact_form') > 0
