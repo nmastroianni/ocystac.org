@@ -14,7 +14,7 @@ const Page = ({ page, navigation, siteMetadata, events, updated }) => {
   React.useEffect(() => {
     if (formOnPage) {
       const recaptchaScript = document.createElement('script')
-      recaptchaScript.src = `https://www.google.com/recaptcha/api.js?render=${process.env.RECAPTCHA_SITE_KEY}`
+      recaptchaScript.src = `https://www.google.com/recaptcha/api.js?render=6Le0sdsiAAAAAKv8cJ9tz3NWUFZw163q0bl-xNyy`
       recaptchaScript.async = true
       document.head.appendChild(recaptchaScript)
       return () => {

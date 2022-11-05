@@ -25,3 +25,8 @@
       transparent 100%
     );
 }
+/* Move reCAPTCHA v3 badge in front */
+
+.grecaptcha-badge {
+  /*  visibility: hidden; */
+}
