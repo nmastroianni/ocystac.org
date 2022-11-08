@@ -66,7 +66,7 @@ const Page = ({ page, navigation, siteMetadata, events, updated }) => {
         <title>{`${prismicH.asText(page.data.title)} · ${
           siteMetadata.data.sitetitle
         }`}</title>
-        <link rel="canonical" href="https://www.ocystac.org" />
+        <link rel="canonical" href={`https://www.ocystac.org${page.url}`} />
         <meta
           name="description"
           content={
