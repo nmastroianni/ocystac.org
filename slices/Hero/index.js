@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import NextImage from '../../components/Image'
 import PrismicButtonLink from '../../components/PrismicButtonLink'
 import { PrismicNextImage } from '@prismicio/next'
 
@@ -44,7 +44,7 @@ const Hero = ({ slice }) => (
             className="tooltip tooltip-accent mb-12 text-base-100 lg:mb-0"
             data-tip={slice.primary.imagetooltip}
           >
-            <PrismicNextImage
+            <NextImage
               field={slice.primary.image}
               className="w-full rounded-lg shadow-lg transition duration-300 ease-in-out lg:hover:shadow-accent"
               priority="true"

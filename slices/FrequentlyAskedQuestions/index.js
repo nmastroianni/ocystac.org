@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { PrismicRichText } from '@prismicio/react'
-import { PrismicNextImage } from '@prismicio/next'
+// import { PrismicNextImage } from '@prismicio/next'
+import NextImage from '../../components/Image'
 import PrismicNextLink from '../../components/PrismicNextLink'
 
 /**
@@ -61,7 +62,7 @@ const FrequentlyAskedQuestions = ({ slice }) => {
           data-tip={node.alt}
         >
           <a href={node.url} target="_blank" rel="noreferrer">
-            <PrismicNextImage field={node} className="rounded-lg" />
+            <NextImage field={node} className="rounded-lg" />
           </a>
         </div>
       )

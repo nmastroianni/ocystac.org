@@ -2,7 +2,8 @@ import Link from 'next/link'
 import Headroom from 'react-headroom'
 import { components } from '../../slices'
 import { SliceZone } from '@prismicio/react'
-import { PrismicNextImage } from '@prismicio/next'
+// import { PrismicNextImage } from '@prismicio/next'
+import NextImage from '../Image'
 import PrismicNextLink from '../PrismicNextLink'
 import SvgLogo from '../SvgLogo'
 
@@ -99,7 +100,7 @@ const Navbar = ({
           <div className="hidden lg:inline-block">
             <Link href="/">
               {logo ? (
-                <PrismicNextImage field={logo} width={120} height={120} />
+                <NextImage field={logo} width={120} height={120} />
               ) : (
                 <SvgLogo className="h-[120px] w-[120px] rounded-full" />
               )}
@@ -126,7 +127,7 @@ const Navbar = ({
           <div className="lg:hidden">
             <Link href="/">
               {logo ? (
-                <PrismicNextImage field={logo} width={120} height={120} />
+                <NextImage field={logo} width={120} height={120} />
               ) : (
                 <SvgLogo className="h-[80px] w-[80px] rounded-full" />
               )}

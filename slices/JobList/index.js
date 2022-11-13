@@ -1,8 +1,9 @@
 import React from 'react'
 import * as prismicH from '@prismicio/helpers'
 import { PrismicRichText } from '@prismicio/react'
-import { PrismicNextImage } from '@prismicio/next'
+// import { PrismicNextImage } from '@prismicio/next'
 import Link from 'next/link'
+import NextImage from '../../components/Image'
 
 /**
  * @typedef {import("@prismicio/client").Content.JobListSlice} JobListSlice
@@ -30,11 +31,7 @@ const JobList = ({ slice }) => {
                   className="text-base-100"
                   tabIndex={-1}
                 >
-                  <PrismicNextImage
-                    field={jobimage}
-                    width={jobimage.dimensions.width}
-                    height={jobimage.dimensions.height}
-                  />
+                  <NextImage field={jobimage} className="rounded-t-2xl" />
                 </Link>
 
                 <div className="card-body shrink-0">

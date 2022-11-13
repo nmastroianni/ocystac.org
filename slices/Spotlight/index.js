@@ -2,7 +2,8 @@ import React from 'react'
 import Icon from '../../components/Icon'
 import { PrismicRichText } from '@prismicio/react'
 import PrismicNextLink from '../../components/PrismicNextLink'
-import { PrismicNextImage } from '@prismicio/next'
+// import { PrismicNextImage } from '@prismicio/next'
+import NextImage from '../../components/Image'
 
 /**
  * @typedef {import("@prismicio/client").Content.SpotlightSlice} SpotlightSlice
@@ -77,7 +78,7 @@ const Spotlight = ({ slice }) => {
     image: ({ node, children }) => {
       return (
         <div className="aspect-w-4 aspect-h-3 my-4 max-w-[700px] md:my-6 lg:my-8">
-          <PrismicNextImage field={node} className="rounded-lg" />
+          <NextImage field={node} className="rounded-lg" />
         </div>
       )
     },
@@ -153,7 +154,7 @@ const Spotlight = ({ slice }) => {
             className={`tooltip tooltip-accent flex lg:my-12`}
             data-tip={imagetooltip}
           >
-            <PrismicNextImage
+            <NextImage
               field={image}
               className={`z-10 w-full rounded-lg shadow-lg ${
                 imagelocation ? `lg:mr-6 xl:mr-10` : `lg:ml-6 xl:ml-10`
